@@ -11,6 +11,7 @@ const initialState = {
   profile_update_status: "idle",
   countryData: [],
   isLoggedIn: false,
+  isAuthenticate: true,
   status: "idle",
   game_search_data_status: "idle",
   feature_game_search_data_status: "idle",
@@ -412,6 +413,9 @@ const profileSlice = createSlice({
 
     clear_profile_data: (state, action) => {
       state.profileData = [];
+    },
+    setIsAuthenticate: (state, action) => {
+      state.isAuthenticate = action?.payload;
     },
   },
   extraReducers: (builder) => {
@@ -915,6 +919,7 @@ const profileSlice = createSlice({
 
 export const {
   setUserProfile,
+  setIsAuthenticate,
   clear_login_status,
   clear_recently_played_status,
   clear_save_fav_status,
