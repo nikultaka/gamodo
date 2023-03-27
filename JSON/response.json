@@ -1,0 +1,723 @@
+{
+    "status": {
+        "error_code": 0,
+        "message": "Success"
+    },
+    "result": {
+        "data": {
+            "recently_played": [
+                {
+                    "game_name": "Uno",
+                    "game_description": "<p>Uno is a popular card game that is perfect for players of all ages. The object of the game is to get rid of all of your cards before your opponents do. You can play Uno online against other players from all over the world. There are also many different variations of the game that you can try out. So what are you waiting for? Get started playing Uno included in your membership.<\/p>",
+                    "game_slug": "uno",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/LARGE_SIZE\/165989684333_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/165992698050_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Two Walls",
+                    "game_description": "<p>Bounce from wall to wall to collect the points but watch out for obstacles.&nbsp; Do you have what it takes to get to 100 points?<\/p>",
+                    "game_slug": "two-walls",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/LARGE_SIZE\/165997422549_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/166007964362_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pinball Space Adventure",
+                    "game_description": "<p>A classic game of pinball with the technology of your phone!&nbsp; It doesn&#39;t get any more enjoyable than this.&nbsp;&nbsp;There are tons of different pinball games to choose from, so you can find the perfect one for you.&nbsp; Watch the video to get a glimpse of graphics and gameplay.<\/p>",
+                    "game_slug": "pinball-space-adventure",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/LARGE_SIZE\/165989573381_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/165992780461_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Squid Game",
+                    "game_description": "<p>From the massively successful Netflix series, Squid Game, comes to life in this game known as Survival Game.&nbsp; &nbsp;Now is your chance to try one of the main challenges that are based on the series: Red Light, Green Light, Sugar Honeycombs, Tug of War, and Marbles.<\/p>",
+                    "game_slug": "squid-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/LARGE_SIZE\/166030783711_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Brain Speed Test",
+                    "game_description": "<p>Do you have what it takes to get through the gauntlet of brain questions? This mobile phone game is designed to test your knowledge and memory. There are questions on a variety of topics, including math, science, pop culture, and history. The questions are designed to be difficult, but not impossible. The goal is to see how far you can get without using any hints or cheats. Can you make it to the end?<\/p>",
+                    "game_slug": "brain-speed-test",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/LARGE_SIZE\/165973890431_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/165973884915_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Scratch Fruit",
+                    "game_description": "<p>Do you love to scratch instant win tickets?&nbsp; Well we have a fun game for you.&nbsp; Scratch the tickets with your phone and if you find three identical symbols, you win the prize!<\/p>",
+                    "game_slug": "scratch-fruit",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/LARGE_SIZE\/165936065958_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/165974414654_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mastermind",
+                    "game_description": "<p>Do you have what it takes to be a mastermind?&nbsp; Coordinate the colors and crack the code for 15 levels to achieve Guru status.&nbsp; &nbsp; Start your guesses on the bottom and work your way to the top before you run out of 10 guesses.<\/p>",
+                    "game_slug": "mastermind",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/LARGE_SIZE\/165936070717_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/165974485858_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mini Golf",
+                    "game_description": "<p>Now is your chance to sink a hole in one with this fun to play Mini Golf course. Use your touch screen to set your aim and speed of each put to get as close as possible.<\/p>",
+                    "game_slug": "mini-golf",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/LARGE_SIZE\/165936082059_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/165974535138_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Master Chess",
+                    "game_description": "<p>Play chess on your phone like a pro with Master Chess! This mobile phone game is the perfect way to get your chess fix while on the go. Whether you&#39;re a beginner or a grandmaster, Master Chess has something for everyone. You can play a friend or the computer with up to three different levels of difficulty.<\/p>",
+                    "game_slug": "master-chess",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/LARGE_SIZE\/165936092421_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/165974562766_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mahjong Deluxe",
+                    "game_description": "<p>Mahjong is a classic game that has been around for centuries. The game is simple, yet challenging and can be played by people of all ages. Mahjong deluxe is a mobile phone game that offers a new twist on the classic game. The game is easy to play and addictive. There are many different levels to keep you challenged. The object of the game is to remove all of the tiles from the board. You can remove tiles by matching them up with other tiles that have the same image on them. The game is won when all of the tiles have been removed from the board.<\/p>",
+                    "game_slug": "mahjong-deluxe",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/LARGE_SIZE\/16593597301_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/165980325373_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Maze",
+                    "game_description": "<p>Maze is a classic game of finding your escape out of the maze. It has three levels of difficulty , so whether you&#39;re a seasoned pro or just getting started, there&#39;s a challenge for you. The goal is to get out of the maze before time runs out. You&#39;ll need to use your mobile phone&#39;s touch to guide your way out.<\/p>",
+                    "game_slug": "maze",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/LARGE_SIZE\/16593595385_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/165980381665_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Master Checkers",
+                    "game_description": "<p>Jump your way to win in this 3D checkers game where you can either play against the computer or play a friend using the same device.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "master-checkers",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/LARGE_SIZE\/165935845918_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/165981686549_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Guess Who",
+                    "game_description": "<p>Guess Who is an online game where you guess the other opponent&#39;s character before they guess your choice. This mobile phone game is perfect for rainy days or when you&#39;re bored and need something to do.<\/p>",
+                    "game_slug": "guess-who",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/LARGE_SIZE\/165919809742_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/165981706553_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Battleship War",
+                    "game_description": "<p>You sank my Battleship!&nbsp; The classic strategy game now comes to the digital era with an easy to play mobile version.&nbsp; No more messy pieces and you can play other players online included with your membership.<\/p>",
+                    "game_slug": "battleship-war",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/LARGE_SIZE\/16593590198_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/165981625792_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "2048 Cute Edition",
+                    "game_description": "<p>2048 is a game that can be played on a mobile phone or tablet. The aim of the game is to get the number 2048 by sliding tiles with numbers on them around a grid. The game is over when there are no more moves left, or when the player has reached the number 2048.<\/p>",
+                    "game_slug": "2048-cute-edition",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/LARGE_SIZE\/165935886661_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/165981671243_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Duck Shooter",
+                    "game_description": "<p>Duck Shooter is similar to the classic game Duck Hunt, where you have to try to hit the target as fast as possible with the least amount of bullets.&nbsp; This game is great for building speed, reflexes,and hand-eye coordination.<\/p>",
+                    "game_slug": "duck-shooter",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/LARGE_SIZE\/165919643329_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Bingo Game",
+                    "game_description": "<p>Play Bingo online and get a chance to win big! This is one of the most popular mobile games that you can play for free. There is no need to download any apps, simply open your mobile browser and start playing. The objective of the game is to match the numbers on your card with the numbers that are called out. As the game progresses, you will have to mark off the numbers that are called out. The first player to match all the numbers on their card wins the game and the money.<\/p>",
+                    "game_slug": "bingo-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/LARGE_SIZE\/165935908646_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/165981603635_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Apples",
+                    "game_description": "<p>This Apples shooter game has you strategically place apples to collect the same color for points.&nbsp; But don&#39;t let the apples get to the bottom otherwise it&#39;s too late and their rotten!&nbsp;<\/p>",
+                    "game_slug": "apples",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/LARGE_SIZE\/165935893445_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/165981651989_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/live_demo\/index.html"
+                }
+            ],
+            "popular_now": [
+                {
+                    "game_name": "Mini Golf",
+                    "game_description": "<p>Now is your chance to sink a hole in one with this fun to play Mini Golf course. Use your touch screen to set your aim and speed of each put to get as close as possible.<\/p>",
+                    "game_slug": "mini-golf",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/LARGE_SIZE\/165936082059_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/165974535138_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Scratch Fruit",
+                    "game_description": "<p>Do you love to scratch instant win tickets?&nbsp; Well we have a fun game for you.&nbsp; Scratch the tickets with your phone and if you find three identical symbols, you win the prize!<\/p>",
+                    "game_slug": "scratch-fruit",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/LARGE_SIZE\/165936065958_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/165974414654_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mastermind",
+                    "game_description": "<p>Do you have what it takes to be a mastermind?&nbsp; Coordinate the colors and crack the code for 15 levels to achieve Guru status.&nbsp; &nbsp; Start your guesses on the bottom and work your way to the top before you run out of 10 guesses.<\/p>",
+                    "game_slug": "mastermind",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/LARGE_SIZE\/165936070717_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/165974485858_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Duck Shooter",
+                    "game_description": "<p>Duck Shooter is similar to the classic game Duck Hunt, where you have to try to hit the target as fast as possible with the least amount of bullets.&nbsp; This game is great for building speed, reflexes,and hand-eye coordination.<\/p>",
+                    "game_slug": "duck-shooter",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/LARGE_SIZE\/165919643329_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/duck-shooter\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Brain Speed Test",
+                    "game_description": "<p>Do you have what it takes to get through the gauntlet of brain questions? This mobile phone game is designed to test your knowledge and memory. There are questions on a variety of topics, including math, science, pop culture, and history. The questions are designed to be difficult, but not impossible. The goal is to see how far you can get without using any hints or cheats. Can you make it to the end?<\/p>",
+                    "game_slug": "brain-speed-test",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/LARGE_SIZE\/165973890431_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/165973884915_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "2048 Cute Edition",
+                    "game_description": "<p>2048 is a game that can be played on a mobile phone or tablet. The aim of the game is to get the number 2048 by sliding tiles with numbers on them around a grid. The game is over when there are no more moves left, or when the player has reached the number 2048.<\/p>",
+                    "game_slug": "2048-cute-edition",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/LARGE_SIZE\/165935886661_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/165981671243_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/2048-cute-edition\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Master Chess",
+                    "game_description": "<p>Play chess on your phone like a pro with Master Chess! This mobile phone game is the perfect way to get your chess fix while on the go. Whether you&#39;re a beginner or a grandmaster, Master Chess has something for everyone. You can play a friend or the computer with up to three different levels of difficulty.<\/p>",
+                    "game_slug": "master-chess",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/LARGE_SIZE\/165936092421_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/165974562766_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Bingo Game",
+                    "game_description": "<p>Play Bingo online and get a chance to win big! This is one of the most popular mobile games that you can play for free. There is no need to download any apps, simply open your mobile browser and start playing. The objective of the game is to match the numbers on your card with the numbers that are called out. As the game progresses, you will have to mark off the numbers that are called out. The first player to match all the numbers on their card wins the game and the money.<\/p>",
+                    "game_slug": "bingo-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/LARGE_SIZE\/165935908646_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/165981603635_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/bingo-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Guess Who",
+                    "game_description": "<p>Guess Who is an online game where you guess the other opponent&#39;s character before they guess your choice. This mobile phone game is perfect for rainy days or when you&#39;re bored and need something to do.<\/p>",
+                    "game_slug": "guess-who",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/LARGE_SIZE\/165919809742_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/165981706553_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/guess-who\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Master Checkers",
+                    "game_description": "<p>Jump your way to win in this 3D checkers game where you can either play against the computer or play a friend using the same device.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "master-checkers",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/LARGE_SIZE\/165935845918_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/165981686549_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-checkers\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Maze",
+                    "game_description": "<p>Maze is a classic game of finding your escape out of the maze. It has three levels of difficulty , so whether you&#39;re a seasoned pro or just getting started, there&#39;s a challenge for you. The goal is to get out of the maze before time runs out. You&#39;ll need to use your mobile phone&#39;s touch to guide your way out.<\/p>",
+                    "game_slug": "maze",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/LARGE_SIZE\/16593595385_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/165980381665_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/maze\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Battleship War",
+                    "game_description": "<p>You sank my Battleship!&nbsp; The classic strategy game now comes to the digital era with an easy to play mobile version.&nbsp; No more messy pieces and you can play other players online included with your membership.<\/p>",
+                    "game_slug": "battleship-war",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/LARGE_SIZE\/16593590198_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/165981625792_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/battleship-war\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mahjong Deluxe",
+                    "game_description": "<p>Mahjong is a classic game that has been around for centuries. The game is simple, yet challenging and can be played by people of all ages. Mahjong deluxe is a mobile phone game that offers a new twist on the classic game. The game is easy to play and addictive. There are many different levels to keep you challenged. The object of the game is to remove all of the tiles from the board. You can remove tiles by matching them up with other tiles that have the same image on them. The game is won when all of the tiles have been removed from the board.<\/p>",
+                    "game_slug": "mahjong-deluxe",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/LARGE_SIZE\/16593597301_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/165980325373_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mahjong-deluxe\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Uno",
+                    "game_description": "<p>Uno is a popular card game that is perfect for players of all ages. The object of the game is to get rid of all of your cards before your opponents do. You can play Uno online against other players from all over the world. There are also many different variations of the game that you can try out. So what are you waiting for? Get started playing Uno included in your membership.<\/p>",
+                    "game_slug": "uno",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/LARGE_SIZE\/165989684333_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/165992698050_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Apples",
+                    "game_description": "<p>This Apples shooter game has you strategically place apples to collect the same color for points.&nbsp; But don&#39;t let the apples get to the bottom otherwise it&#39;s too late and their rotten!&nbsp;<\/p>",
+                    "game_slug": "apples",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/LARGE_SIZE\/165935893445_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/165981651989_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/apples\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Squid Game",
+                    "game_description": "<p>From the massively successful Netflix series, Squid Game, comes to life in this game known as Survival Game.&nbsp; &nbsp;Now is your chance to try one of the main challenges that are based on the series: Red Light, Green Light, Sugar Honeycombs, Tug of War, and Marbles.<\/p>",
+                    "game_slug": "squid-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/LARGE_SIZE\/166030783711_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pac Circle",
+                    "game_description": "<p>Pac Circle is a Pacman Tribute and takes our hero around a circle to grab the white points without touching the ghosts.&nbsp; Can you beat 100?<\/p>",
+                    "game_slug": "pac-circle",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/LARGE_SIZE\/165997385098_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/166007871262_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pinball Space Adventure",
+                    "game_description": "<p>A classic game of pinball with the technology of your phone!&nbsp; It doesn&#39;t get any more enjoyable than this.&nbsp;&nbsp;There are tons of different pinball games to choose from, so you can find the perfect one for you.&nbsp; Watch the video to get a glimpse of graphics and gameplay.<\/p>",
+                    "game_slug": "pinball-space-adventure",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/LARGE_SIZE\/165989573381_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/165992780461_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Two Walls",
+                    "game_description": "<p>Bounce from wall to wall to collect the points but watch out for obstacles.&nbsp; Do you have what it takes to get to 100 points?<\/p>",
+                    "game_slug": "two-walls",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/LARGE_SIZE\/165997422549_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/166007964362_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Tap Corner",
+                    "game_description": "<p>Tap your line to the circle to slow it down and gather points.&nbsp; The longer it takes to reach the circle the faster it goes.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "tap-corner",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/LARGE_SIZE\/165997417961_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/16600794046_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/live_demo\/index.html"
+                }
+            ],
+            "new_releases": [
+                {
+                    "game_name": "Squid Game",
+                    "game_description": "<p>From the massively successful Netflix series, Squid Game, comes to life in this game known as Survival Game.&nbsp; &nbsp;Now is your chance to try one of the main challenges that are based on the series: Red Light, Green Light, Sugar Honeycombs, Tug of War, and Marbles.<\/p>",
+                    "game_slug": "squid-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/LARGE_SIZE\/166030783711_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/squid-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Two Walls",
+                    "game_description": "<p>Bounce from wall to wall to collect the points but watch out for obstacles.&nbsp; Do you have what it takes to get to 100 points?<\/p>",
+                    "game_slug": "two-walls",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/LARGE_SIZE\/165997422549_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/166007964362_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/two-walls\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Tap Corner",
+                    "game_description": "<p>Tap your line to the circle to slow it down and gather points.&nbsp; The longer it takes to reach the circle the faster it goes.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "tap-corner",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/LARGE_SIZE\/165997417961_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/16600794046_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-corner\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Sine Platform",
+                    "game_description": "<p>Sine Platform uses a combination of timing and physics to get your ball to bounce to the next platform without losing.&nbsp; Can you reach 100?<\/p>",
+                    "game_slug": "sine-platform",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sine-platform\/LARGE_SIZE\/165997410040_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sine-platform\/166007917753_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sine-platform\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pop Blue",
+                    "game_description": "<p>Tap the blue bubbles but don&#39;t tap the red!&nbsp; Miss a blue and you lose!&nbsp; Build those instincts and finger precision with this little brain exerciser.<\/p>",
+                    "game_slug": "pop-blue",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pop-blue\/LARGE_SIZE\/165997403318_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pop-blue\/166007899799_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pop-blue\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pac Circle",
+                    "game_description": "<p>Pac Circle is a Pacman Tribute and takes our hero around a circle to grab the white points without touching the ghosts.&nbsp; Can you beat 100?<\/p>",
+                    "game_slug": "pac-circle",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/LARGE_SIZE\/165997385098_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/166007871262_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pac-circle\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "On the Hill",
+                    "game_description": "<p>On the Hill follows down a path to quickly grab the white circles and avoid the obstacles.&nbsp; Build up points without getting hit!<\/p>",
+                    "game_slug": "on-the-hill",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/on-the-hill\/LARGE_SIZE\/165997376065_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/on-the-hill\/166007856154_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/on-the-hill\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Minimal Road",
+                    "game_description": "<p>Minimal Road is a simple road racing game that requires a quick instinct to stay between the lines and avoid the slow cars ahead.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "minimal-road",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/minimal-road\/LARGE_SIZE\/165997368736_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/minimal-road\/166007842213_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/minimal-road\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "In Orbit",
+                    "game_description": "<p>In Orbit focuses on landing on one planet to another.&nbsp; Time the rotation and size in order to build your points otherwise you&#39;re lost in space.<\/p>",
+                    "game_slug": "in-orbit",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/in-orbit\/LARGE_SIZE\/165997357834_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/in-orbit\/166007820811_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/in-orbit\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Flashing",
+                    "game_description": "<p>Flashing is a brain exercise that requires your concentration and to pattern match quickly on the top or bottom.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "flashing",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/flashing\/LARGE_SIZE\/165997350982_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/flashing\/166007802143_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/flashing\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Escape Sideways",
+                    "game_description": "<p>Escape Sideways is a simple brain game that helps with building your reflexes.&nbsp; Pick left or right while collecting coins without getting burned by the meteor.<\/p>",
+                    "game_slug": "escape-sideways",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/escape-sideways\/LARGE_SIZE\/165997343747_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/escape-sideways\/166007787783_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/escape-sideways\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Yahtzee Dice Game",
+                    "game_description": "<p>Yahtzee is a dice game where the object of the game is to score the most points by rolling five dice and getting certain combinations of dice.<\/p>",
+                    "game_slug": "yahtzee-dice-game",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/yahtzee-dice-game\/LARGE_SIZE\/165989723758_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/yahtzee-dice-game\/165992662531_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/yahtzee-dice-game\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Whack Em All",
+                    "game_description": "<p>Whack Em All&nbsp;is a popular game that is included in your membership. The objective of the game is to hit as many moles as possible in a limited time. There are different levels of difficulty, and the game helps build your reflexes and reduce your stress levels.<\/p>",
+                    "game_slug": "whack-em-all",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/whack-em-all\/LARGE_SIZE\/165989712995_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/whack-em-all\/165992672712_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/whack-em-all\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Video Poker Jacks or Better",
+                    "game_description": "<p>If you&#39;ve ever been to the casino and you&#39;re sitting at a bar, you know this game quite well!&nbsp; Now you can brush up on your video poker skills from your phone with this Jacks or Better challenge.&nbsp; Beat the odds, win big, and celebrate!<\/p>",
+                    "game_slug": "video-poker-jacks-or-better",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/video-poker-jacks-or-better\/LARGE_SIZE\/165989700230_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/video-poker-jacks-or-better\/165992685379_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/video-poker-jacks-or-better\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Uno",
+                    "game_description": "<p>Uno is a popular card game that is perfect for players of all ages. The object of the game is to get rid of all of your cards before your opponents do. You can play Uno online against other players from all over the world. There are also many different variations of the game that you can try out. So what are you waiting for? Get started playing Uno included in your membership.<\/p>",
+                    "game_slug": "uno",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/LARGE_SIZE\/165989684333_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/165992698050_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/uno\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Three Card Poker",
+                    "game_description": "<p>Three Card Poker is a game that has taken the world by storm. It is easy to see why this game is so popular. It is simple to learn, yet offers a great challenge. And, best of all, it can be played online!<\/p>\r\n\r\n<p>If you have never played Three Card Poker before, don&#39;t worry. The rules are very simple. Each player is dealt three cards, face down. The dealer then reveals the first card, called the flop. The players then have the opportunity to either bet or fold.<\/p>\r\n\r\n<p>If you want to stay in the hand, you must place a bet. The amount you bet is up to you, but it must be at least the same as the ante. Once all the players have either bet or folded, the dealer reveals the second card, called the turn. The players then have the opportunity to either bet or fold again.<\/p>\r\n\r\n<p>Finally, the dealer reveals the third card, called the river. The players then have one last chance to either bet or fold. If there are still active players after the final betting round, the dealer reveals their hand and the player with the best hand wins!<\/p>",
+                    "game_slug": "three-card-poker",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/three-card-poker\/LARGE_SIZE\/165989672359_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/three-card-poker\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/three-card-poker\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Tap the Tile",
+                    "game_description": "<p>Tap The Tile is an&nbsp;<strong>Endless&nbsp;<\/strong>Skill Game. Don&rsquo;t touch any white tile, that&rsquo;s the core rule of this addicting game.<br \/>\r\nSounds easy? Give it a try and see how many points you&rsquo;ll score!<\/p>",
+                    "game_slug": "tap-the-tile",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-the-tile\/LARGE_SIZE\/165989659342_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-the-tile\/165992710346_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/tap-the-tile\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Street Basketball",
+                    "game_description": "<p>Take it to the hoop with this fun basketball shooter. See how many baskets you can make in a row! Do you have what it takes to be a basketball superstar?<\/p>",
+                    "game_slug": "street-basketball",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/street-basketball\/LARGE_SIZE\/165989646825_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/street-basketball\/165992721212_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/street-basketball\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Arabian Nights Slots",
+                    "game_description": "<p>Are you a fan of playing slot machines in Vegas?&nbsp; Well enjoy this highly addictive game in the comfort of your home, without breaking the bank.<\/p>",
+                    "game_slug": "arabian-nights-slots",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/arabian-nights-slots\/LARGE_SIZE\/165989633548_game_thumbnail.jpeg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/arabian-nights-slots\/165992731788_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/arabian-nights-slots\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Skeet Shooting",
+                    "game_description": "<p>Are you looking for a fun and challenging way to spend your free time? If so, why not try skeet shooting? Skeet shooting is a great way to improve your hand-eye coordination and reflexes, and it&#39;s also a lot of fun.<\/p>",
+                    "game_slug": "skeet-shooting",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/skeet-shooting\/LARGE_SIZE\/165989611928_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/skeet-shooting\/165992750739_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/skeet-shooting\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Plumber Soda Pop",
+                    "game_description": "<p>The pipes are twisted and the soda needs to flow!&nbsp; Do you have the speed and skill to rack up points to fix the soda pop?&nbsp;&nbsp;<\/p>",
+                    "game_slug": "plumber-soda-pop",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/plumber-soda-pop\/LARGE_SIZE\/165989593799_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/plumber-soda-pop\/165992764781_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/plumber-soda-pop\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pinball Space Adventure",
+                    "game_description": "<p>A classic game of pinball with the technology of your phone!&nbsp; It doesn&#39;t get any more enjoyable than this.&nbsp;&nbsp;There are tons of different pinball games to choose from, so you can find the perfect one for you.&nbsp; Watch the video to get a glimpse of graphics and gameplay.<\/p>",
+                    "game_slug": "pinball-space-adventure",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/LARGE_SIZE\/165989573381_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/165992780461_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pinball-space-adventure\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Parking Block",
+                    "game_description": "<p>Are you up for a parking challenge?&nbsp; Can you get the cars in the right direction to move the cars correctly?&nbsp; This ultimate brain teaser is filled with levels that will have you scratching your head and appreciate the job of a valet.<\/p>",
+                    "game_slug": "parking-block",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/parking-block\/LARGE_SIZE\/165989532779_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/parking-block\/165992793944_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/parking-block\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Baccarat",
+                    "game_description": "<p>Baccarat is one of the oldest and most popular casino games in the world. The game is believed to have originated in Italy during the Renaissance, and it has been played by royalty and nobility for centuries. Today, baccarat is enjoyed by millions of players around the globe.<\/p>\r\n\r\n<p>If you&#39;re looking for a sophisticated and exciting casino game, look no further than baccarat. This classic game offers players the chance to win big money, and it&#39;s easy to learn how to play. In baccarat, players bet on either the player or the banker to win the hand. The goal of the game is to have the highest point total at the end of the round.<\/p>",
+                    "game_slug": "baccarat",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/baccarat\/LARGE_SIZE\/165989508226_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/baccarat\/",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/baccarat\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Pai Gow Poker",
+                    "game_description": "<p>Pai Gow Poker is an enjoyable Chinese poker game that is included in your membership. It is a two-player game where each player is dealt seven cards, and the aim is to make the best five-card hand and two-card hand possible. The game is easy to learn and play, and it offers a great opportunity to practice your poker skills. Do you have what it takes to win?<\/p>",
+                    "game_slug": "pai-gow-poker",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pai-gow-poker\/LARGE_SIZE\/165989469659_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pai-gow-poker\/165992808076_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/pai-gow-poker\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Nine Mens Morris",
+                    "game_description": "<p>Play Nine Men&#39;s Morris online for the ultimate brain strategy. The board game Nine Men&#39;s Morris is thought to date back to the Roman Empire. The aim of the game is to form &#39;mills&#39; - three of your own men lined up horizontally or vertically - allowing you to remove an opponent&#39;s man from the board. The game is won by reducing the number of your opponent&#39;s men to two, or by blocking their men so they can&#39;t make any more moves.<\/p>\r\n\r\n<p>Nine Men&#39;s Morris is a great game for developing thinking and strategy skills, and is perfect for playing online against friends<\/p>",
+                    "game_slug": "nine-mens-morris",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/nine-mens-morris\/LARGE_SIZE\/165989455543_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/nine-mens-morris\/165992824974_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/nine-mens-morris\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Horse Racing",
+                    "game_description": "<p>Ready to bet on Lady Luck? You can do it right from your living room (or wherever you happen to be) by playing horse racing online.<\/p>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>You don&#39;t have to go to the track anymore - or even leave your house. You can bet on horse races online from inside of this app. Gain some experience and knowledge before you head to the track.<\/p>",
+                    "game_slug": "horse-racing",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/horse-racing\/LARGE_SIZE\/16598943668_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/horse-racing\/165992840339_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/horse-racing\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Hexagon Fall",
+                    "game_description": "<p>Hexagon Fall is an online game that&#39;s perfect for anyone who loves a challenge. Tap on the blocks to remove them and let your Hexagon fall down. But be careful - if you fall out of the tower, you&#39;ll lose! So see how far you can make it in this addicting game.<\/p>",
+                    "game_slug": "hexagon-fall",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/hexagon-fall\/LARGE_SIZE\/165988944285_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/hexagon-fall\/165989006541_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/hexagon-fall\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Head Soccer",
+                    "game_description": "<p>Head Soccer is a fun game of trying to score a goal against your opponent by all means possible!&nbsp; But don&#39;t get cocky because that ball doesn&#39;t stop moving!<\/p>",
+                    "game_slug": "head-soccer",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/head-soccer\/LARGE_SIZE\/16598874242_game_thumbnail.jpeg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/head-soccer\/165992858962_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/head-soccer\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Foosball",
+                    "game_description": "<p><strong>Goal!<\/strong><\/p>\r\n\r\n<p>You can play foosball online against friends or strangers from all over the globe. The game is easy to pick up, and addictive fun. Just use your arrow keys to control your players, and hit the ball into the other team&#39;s net to score a goal. First to five goals wins!<\/p>",
+                    "game_slug": "foosball",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/foosball\/LARGE_SIZE\/16598872453_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/foosball\/165992873791_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/foosball\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Darts Pro",
+                    "game_description": "<p>Welcome to the world of online darts! Here you can test your skills against other players from all over the globe. Whether you&#39;re a seasoned pro or just starting out, we&#39;ve got a great game ready for you.<\/p>",
+                    "game_slug": "darts-pro",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/darts-pro\/LARGE_SIZE\/165988709850_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/darts-pro\/165992890614_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/darts-pro\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Boat Rush",
+                    "game_description": "<p>This exciting arcade hit is now included in your membership.&nbsp; Move your boat around obstacles and collect as many coins as you can without falling into the traps.<\/p>",
+                    "game_slug": "boat-rush",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/boat-rush\/LARGE_SIZE\/165988696966_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/boat-rush\/165992905227_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/boat-rush\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Beer Rush",
+                    "game_description": "<p>Beer Rush combines a classic video game look with a great multitasking brain workout to keep you on your toes.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "beer-rush",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/beer-rush\/LARGE_SIZE\/165988596273_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/beer-rush\/165992916823_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/beer-rush\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Backgammon Classic",
+                    "game_description": "<p>Whether you&#39;re a beginner or an expert, playing backgammon online is a great way to enjoy this classic game. There are many different websites that offer backgammon games, so finding one that&#39;s right for you shouldn&#39;t be difficult. Backgammon is played by two people with 15 checkers each. The goal of the game is to be the first player to remove all of your checkers from the board.<\/p>",
+                    "game_slug": "backgammon-classic",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/backgammon-classic\/LARGE_SIZE\/165988583546_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/backgammon-classic\/165992973523_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/backgammon-classic\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Super Plinko",
+                    "game_description": "<p>Just like the famous game from The Price Is Right, comes Super Plinko, a point-earning game that combines a lot of luck with a little strategy, but so much fun!<\/p>",
+                    "game_slug": "super-plinko",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/super-plinko\/LARGE_SIZE\/165982086216_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/super-plinko\/165982086611_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/super-plinko\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "King Solitaire",
+                    "game_description": "<p>King Solitaire<\/p>",
+                    "game_slug": "king-solitaire",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/king-solitaire\/LARGE_SIZE\/165982044747_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/king-solitaire\/165982044990_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/king-solitaire\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Emoji Puzzle",
+                    "game_description": "<p>Play the Emoji Puzzle Game by connecting the emoji with the correct group. There are 80&nbsp;puzzles to solve, each with a different level of difficulty. Can you beat the clock and earn a high score?<\/p>\r\n\r\n<p>This mobile phone game is perfect for fans of puzzle games. With 80&nbsp;different puzzles to solve, ranging in difficulty, there is something for everyone. The Emoji Puzzle Game tests your logic and problem solving skills as you try to connect the emoji with the correct group. Beat the clock and earn a high score!<\/p>\r\n\r\n<p>So, if you are looking for a mobile phone game that is challenging, fun and addictive, then look no further than the Emoji Puzzle Game!<\/p>",
+                    "game_slug": "emoji-puzzle",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/emoji-puzzle\/LARGE_SIZE\/165972323676_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/emoji-puzzle\/165973837482_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/emoji-puzzle\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Brain Speed Test",
+                    "game_description": "<p>Do you have what it takes to get through the gauntlet of brain questions? This mobile phone game is designed to test your knowledge and memory. There are questions on a variety of topics, including math, science, pop culture, and history. The questions are designed to be difficult, but not impossible. The goal is to see how far you can get without using any hints or cheats. Can you make it to the end?<\/p>",
+                    "game_slug": "brain-speed-test",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/LARGE_SIZE\/165973890431_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/165973884915_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/brain-speed-test\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "American Roulette",
+                    "game_description": "<p>Play American Roulette from your phone. Are you feeling lucky? Try your hand at this 3D casino game from your phone. American Roulette is a casino game that includes betting on either a single number, various groupings of numbers, the colors red or black, whether the number is odd or even, or if the numbers are high (19&ndash;36) or low (1&ndash;18). There are many ways to bet in American Roulette, and the game offers a variety of payouts.<\/p>",
+                    "game_slug": "american-roulette",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/american-roulette\/LARGE_SIZE\/165972200147_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/american-roulette\/165973786837_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/american-roulette\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Drop the Number",
+                    "game_description": "<p>Drop the number is more addicting than Tetris and requires a combination of skill and chance to combine the boxes for a higher score.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "drop-the-number",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/drop-the-number\/LARGE_SIZE\/165970482217_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/drop-the-number\/165973927042_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/drop-the-number\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Donut Crush Saga",
+                    "game_description": "<p>Are you looking for a simple game to help pass the time by?&nbsp; Grab a couple donuts, match them up, and you&#39;ll get the satisfaction of building your score as you crush this mobile donut game!<\/p>",
+                    "game_slug": "donut-crush-saga",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/donut-crush-saga\/LARGE_SIZE\/165970741541_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/donut-crush-saga\/165973947529_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/donut-crush-saga\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Block Triangle",
+                    "game_description": "<p>Do you have what it takes to get through the game matching triangles in the right pattern?<\/p>\r\n\r\n<p>This mobile phone game is all about testing your reflexes and problem-solving skills. In each level, you need to match the colored triangles in the correct pattern before the time runs out. Sounds easy enough, but as the levels progress, the patterns get more and more complex.<\/p>\r\n\r\n<p>Think you&#39;re up for the challenge? Give it a try and see how far you can get!<\/p>",
+                    "game_slug": "block-triangle",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/block-triangle\/LARGE_SIZE\/165970749611_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/block-triangle\/165974056598_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/block-triangle\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Sweet Memory Challenge",
+                    "game_description": "<p>Test your memory and boost your brain with this easy to use memory game.&nbsp; A great way to kill some time and give your brain a little exercise without the sugar rush.&nbsp;<\/p>",
+                    "game_slug": "sweet-memory-challenge",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sweet-memory-challenge\/LARGE_SIZE\/16593604229_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sweet-memory-challenge\/165973401970_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/sweet-memory-challenge\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Word Finder",
+                    "game_description": "<p>Do you have what it takes to build as many words as possible in just a short amount of time?&nbsp; This Word Finder will sharpen your instincts and vocabulary as you connect as many words as possible.&nbsp;&nbsp;<\/p>",
+                    "game_slug": "word-finder",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/word-finder\/LARGE_SIZE\/165936048887_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/word-finder\/165974339024_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/word-finder\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Ultimate Sudoku",
+                    "game_description": "<p>Ultimate Sudoku is the ultimate game for keeping your mind sharp.&nbsp; You can choose between Beginner, Intermediate, and Advanced to become the Sudoku Champion.&nbsp; The clock is ticking, do you have what it takes to win?<\/p>",
+                    "game_slug": "ultimate-sudoku",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/ultimate-sudoku\/LARGE_SIZE\/165936053861_game_thumbnail.png",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/ultimate-sudoku\/165974353962_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/ultimate-sudoku\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Scratch Fruit",
+                    "game_description": "<p>Do you love to scratch instant win tickets?&nbsp; Well we have a fun game for you.&nbsp; Scratch the tickets with your phone and if you find three identical symbols, you win the prize!<\/p>",
+                    "game_slug": "scratch-fruit",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/LARGE_SIZE\/165936065958_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/165974414654_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/scratch-fruit\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mastermind",
+                    "game_description": "<p>Do you have what it takes to be a mastermind?&nbsp; Coordinate the colors and crack the code for 15 levels to achieve Guru status.&nbsp; &nbsp; Start your guesses on the bottom and work your way to the top before you run out of 10 guesses.<\/p>",
+                    "game_slug": "mastermind",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/LARGE_SIZE\/165936070717_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/165974485858_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mastermind\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Dominos",
+                    "game_description": "<p>Play against 2,3 or 4 computers for a game of dominos.<\/p>\r\n\r\n<p>Match the dominos with the same number of dots and play your tiles before the others with the least possible moves. First player to your target goal wins the game.<\/p>",
+                    "game_slug": "dominos",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/dominos\/LARGE_SIZE\/165936076065_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/dominos\/165974510143_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/dominos\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Mini Golf",
+                    "game_description": "<p>Now is your chance to sink a hole in one with this fun to play Mini Golf course. Use your touch screen to set your aim and speed of each put to get as close as possible.<\/p>",
+                    "game_slug": "mini-golf",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/LARGE_SIZE\/165936082059_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/165974535138_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/mini-golf\/live_demo\/index.html"
+                },
+                {
+                    "game_name": "Master Chess",
+                    "game_description": "<p>Play chess on your phone like a pro with Master Chess! This mobile phone game is the perfect way to get your chess fix while on the go. Whether you&#39;re a beginner or a grandmaster, Master Chess has something for everyone. You can play a friend or the computer with up to three different levels of difficulty.<\/p>",
+                    "game_slug": "master-chess",
+                    "game_thumbnail": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/LARGE_SIZE\/165936092421_game_thumbnail.jpg",
+                    "game_video": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/165974562766_game_video.mp4",
+                    "game_url": "https:\/\/d33qrt5d6zzez8.cloudfront.net\/uploads\/games\/master-chess\/live_demo\/index.html"
+                }
+            ],
+            "coming_next_month": [],
+            "feature": []
+        }
+    },
+    "execution_time": "0.5034"
+}

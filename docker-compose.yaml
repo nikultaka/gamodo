@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  #React Nextjs Node Service
+
+  node:
+    image: webskittersdocker/node16:latest
+
+    container_name: gamodo-coupons-ui-NextJS
+
+    restart: unless-stopped
+
+    working_dir: /home/wtsadmin/myapp
+
+    environment:
+      - NODE_ENV=production
+
+    volumes:
+      - ./:/home/wtsadmin/myapp
+
+    ports:
+      - "14015:14015"
+    command: >
+      sh -c "npm install --force &&
+      	     npm run build &&
+             npm start"
+
+#Docker Networks
+
+networks:
+  default:
+    external:
+      name: webskitters

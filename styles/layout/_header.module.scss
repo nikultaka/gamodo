@@ -1,0 +1,116 @@
+@import "../base/theme";
+
+.headerWrapper {
+  background-color: var(--homeHeader);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 20px 20px;
+  padding: 20px 20px 25px 20px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1) 0ms !important;
+  .homeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .homeHeaderLeft {
+      h1 {
+        font-weight: 600;
+        color: var(--headerTextColor);
+        font-size: 25px;
+        margin-bottom: 2px;
+      }
+
+      .hearderSubHeading {
+        color: var(--headerTextColor);
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+
+    .homeHeaderRight {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      button {
+        svg {
+          path {
+            fill: var(--defaultIconColor);
+          }
+        }
+      }
+      :global(.MuiAvatar-root) {
+        margin-left: 14px;
+        img {
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      :global(.MuiInputBase-root) {
+        flex-basis: 100%;
+        max-width: 100%;
+        color: var(--commonTextColor);
+      }
+
+      :global(.MuiTouchRipple-root) {
+        display: none;
+      }
+    }
+  }
+
+  .headerSearch {
+    margin-bottom: -40px;
+    margin-top: 20px;
+
+    :global(.MuiFormControl-root) {
+      display: flex;
+    }
+
+    :global(.MuiInput-underline) {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    input {
+    }
+    &.search_hide {
+      :global(.MuiFormControl-root) {
+        display: none;
+      }
+      .searchIconHide {
+        :global(.MuiButtonBase-root) {
+          background-color: var(--headerSearchBtnBg);
+          border-radius: 8px;
+          padding: 13px;
+          min-width: 1px;
+        }
+        button {
+          svg {
+            path {
+              fill: var(--defaultIconColor);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  :global(.closeSearch) {
+    svg {
+      font-size: 20px;
+  
+      path {
+        fill: #a9acb2 !important;
+      }
+    }
+  }
+}
+
+

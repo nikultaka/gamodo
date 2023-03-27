@@ -1,0 +1,136 @@
+$activeColor: #1877f2;
+$activeGray: #5F5F5F;
+
+$themes: (
+  activeColor: (darkTheme: $activeColor,
+    lightTheme: $activeColor,
+  ),
+  activeGray: (darkTheme: $activeGray,
+    lightTheme: $activeGray,
+  ),
+  nextProgressBarColor: (darkTheme: $activeColor,
+    lightTheme: $activeColor,
+  ),
+  bodyBackground: (darkTheme: #1e1e1e,
+    lightTheme: #ffffff,
+  ),
+  defaultIconColor: (darkTheme: white,
+    lightTheme: #2b2c33,
+  ),
+  activeIconColor: (darkTheme: var(--activeColor),
+    lightTheme: var(--activeColor),
+  ),
+  commonTextColor: (darkTheme: #ffffff,
+    lightTheme: #1e1e1e,
+  ),
+  activeTextColor: (darkTheme: var(--activeColor),
+    lightTheme: var(--activeColor),
+  ),
+  headerBackground: (darkTheme: #1e1e1e,
+    lightTheme: #ffffff,
+  ),
+  headerTextColor: (darkTheme: #ffffff,
+    lightTheme: #1e1e1e,
+  ),
+  homeHeader: (darkTheme: #2b2c33,
+    lightTheme: #eef3f9,
+  ),
+  verificationBg: (darkTheme: #2b2c33,
+    lightTheme: #FFFFFF,
+  ),
+  headerSearchBtnBg: (darkTheme: #1e1e1e,
+    lightTheme: #f5f5f5,
+  ),
+  headerSearchBg: (darkTheme: #464751,
+    lightTheme: #f5f5f5,
+  ),
+  placeholderColor: (darkTheme: #ffffff,
+    lightTheme: #3b3b3b,
+  ),
+  productCardBg: (darkTheme: #2b2c33,
+    lightTheme: #ffffff,
+  ),
+  pageBackBtnBg: (darkTheme: #2b2c33,
+    lightTheme: #ffffff,
+  ),
+  productDetailsText: (darkTheme: #ffffff,
+    lightTheme: #3b3b3b,
+  ),
+  wishListBackgroundCircle: (darkTheme: rgba(255, 0, 0, 0.05),
+    lightTheme: rgba(255, 0, 0, 0.05),
+  ),
+  wishListIcon: (darkTheme: #d7d7d7,
+    lightTheme: #d7d7d7,
+  ),
+  wishListIconFilled: (darkTheme: #ff0000,
+    lightTheme: #ff0000,
+  ),
+  inputBackground: (darkTheme: #2b2c33,
+    lightTheme: #ffffff,
+  ),
+  inputStartAdornmentColor: (darkTheme: #ffffff,
+    lightTheme: var(--activeColor),
+  ),
+  inputStartAdornmentColorgray: (darkTheme: #ffffff,
+    lightTheme: var(--activeGray),
+  ),
+  inputSelectArrowColor: (darkTheme: #ffffff,
+    lightTheme: #374957,
+  ),
+  footerNavBarTextColor: (darkTheme: #ffffff,
+    lightTheme: #1e1e1e,
+  ),
+  footerNavBarIconColor: (darkTheme: #d7d7d7,
+    lightTheme: #1e1e1e,
+  ),
+  hrLineBg: (darkTheme: #ffffff,
+    lightTheme: #5f5f5f,
+  ),
+  checkboxBorder: (darkTheme: #ffffff,
+    lightTheme: #1e1e1e,
+  ),
+  modalBg: (darkTheme: #3b3b3b,
+    lightTheme: #ffffff,
+  ),
+  borderColor: (darkTheme: transparent,
+    lightTheme: #d9d9d9,
+  ),
+  vrLineBg: (darkTheme: #898989,
+    lightTheme: #d9d9d9,
+  ),
+  desktopBackgroundImage: (darkTheme: url(/assets/images/bg-design-dark.png),
+    lightTheme: url(/assets/images/bg-design.png),
+  ),
+  searchBg: (darkTheme: #464751,
+    lightTheme: #ffffff,
+  ),
+  btnColorOne: (darkTheme: #fff,
+    lightTheme: #1877f2,
+  ),
+  btnColorTwo: (darkTheme: #1877f2,
+    lightTheme: #28303f,
+  ),
+);
+
+//get theme variables
+@mixin printVariables($mode) {
+
+  @each $key,
+  $map in $themes {
+
+    @each $prop,
+    $value in $map {
+      @if $prop ==$mode {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  @include printVariables("darkTheme");
+}
+
+body.light-mode {
+  @include printVariables("lightTheme");
+}

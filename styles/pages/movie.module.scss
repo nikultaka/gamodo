@@ -1,0 +1,9 @@
+.moviepageWrapper {
+    :global(.couponSlider) {
+        padding: 0 20px;
+
+        :global(.itemsWrapper) {
+            padding: 0;
+        }
+    }
+}

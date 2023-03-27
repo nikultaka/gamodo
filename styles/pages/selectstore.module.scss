@@ -1,0 +1,41 @@
+.selectStorePage {
+  position: relative;
+  padding: 30px 20px 0;
+  text-align: center;
+
+  .rewardsLogo {
+    margin-bottom: 20px;
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--commonTextColor);
+      margin: auto;
+
+      @media (max-width: 575px) {
+        max-width: 234px;
+      }
+    }
+  }
+
+  .selectStoreGrid {
+    padding: 0 10px 90px;
+    // height: calc(100vh - 370px);
+    // height: 80vh;
+    // overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      display: none;
+    }
+
+    :global(.MuiGrid-item) {
+      padding-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+.pageLogin {
+  padding: 30px 20px 40px;
+
+  .rewardsLogo {
+    text-align: center;
+    margin-bottom: 30px;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  :global(.loginMainBody) {
+    :global(.shotdes) {
+      @media (max-width: 575px) {
+        // max-width: 200px;
+      }
+    }
+
+    .formInputGroup {
+      margin-top: 30px;
+
+      .formGroup {
+        margin-bottom: 15px;
+
+        :global(.MuiFormLabel-root) {
+          color: var(--commonTextColor);
+          font-family: "SFProText";
+          font-weight: 500;
+          font-size: 20px;
+          margin-bottom: 4px;
+
+          @media (max-width: 767px) {
+            font-size: 14px;
+          }
+        }
+
+        :global(.MuiInputBase-root) {
+          background-color: var(--inputBackground);
+          border: 1px solid rgba(24, 119, 242, 0.2);
+          border-radius: 10px;
+          padding: 9px 13px;
+          display: flex;
+          align-items: center;
+          // :global(.MuiBox-root) {
+          //   line-height: 0.5;
+          // }
+
+          &::after,
+          &::before {
+            display: none;
+          }
+
+          input {
+            font-weight: 400;
+            font-size: 18px;
+            color: var(--commonTextColor);
+
+            // padding: 0;
+            // line-height: 1.6;
+            @media (max-width: 767px) {
+              font-size: 14px;
+            }
+
+            &::placeholder {
+              color: var(--commonTextColor);
+              opacity: 1;
+            }
+
+            &:-ms-input-placeholder {
+              color: var(--commonTextColor);
+            }
+
+            &::-ms-input-placeholder {
+              color: var(--commonTextColor);
+            }
+          }
+        }
+
+        :global(.MuiBox-root) {
+          line-height: 1;
+        }
+
+        .forgotPasswordFlex {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding-top: 10px;
+
+          .login_checkbox {
+            display: flex;
+            align-items: center;
+
+            :global(.MuiCheckbox-root) {
+              padding: 0 10px 0 0;
+            }
+
+            label {
+              font-weight: 400;
+              font-size: 14px;
+              display: inline-block;
+              color: var(--commonTextColor);
+              position: relative;
+
+              @media screen and (max-width: 767px) {
+                font-size: 12px;
+              }
+            }
+          }
+
+          a {
+            font-weight: 500;
+            font-size: 14px;
+            color: #1877f2;
+          }
+        }
+      }
+    }
+
+    :global(.primaryBtn) {
+      svg {
+        margin-right: 15px;
+      }
+    }
+
+    .or {
+      text-align: center;
+      position: relative;
+      margin: 30px 0;
+
+      &::after {
+        background-color: var(--hrLineBg);
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 98%;
+        height: 1px;
+        z-index: -1;
+      }
+
+      span {
+        display: inline-block;
+        background-color: var(--bodyBackground);
+        padding: 0 5px;
+        font-weight: 400;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--commonTextColor);
+      }
+    }
+
+    .log_via_Smsbtn {
+      margin-bottom: 70px;
+      text-align: center;
+
+      button {
+        width: 335px;
+        margin: auto;
+        background: #28303f;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #ffffff;
+        padding: 10px;
+        border: 1px solid #d9d9d9;
+
+        &:hover {
+          background: #28303f;
+        }
+
+        @media (max-width: 575px) {
+          width: 100%;
+        }
+
+        svg {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .loginTerms {
+      text-align: center;
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--commonTextColor);
+        margin-bottom: 5px;
+
+        a {
+          color: #1877f2;
+        }
+      }
+    }
+  }
+}

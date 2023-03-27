@@ -1,0 +1,135 @@
+.page_proile_details {
+  position: relative;
+  .mainProfile {
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+    }
+    :global(.MuiAvatar-root) {
+      margin: 0 auto;
+    }
+  }
+
+  .profileForm {
+    padding: 30px 20px;
+
+    .formGroup {
+      :global(.MuiFormLabel-root) {
+        color: var(--commonTextColor);
+        font-family: "SFProText";
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 4px;
+
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
+      }
+
+      :global(.MuiInputBase-root) {
+        background-color: var(--inputBackground);
+        border: 1px solid rgba(24, 119, 242, 0.2);
+        border-radius: 10px;
+        padding: 9px 13px;
+        display: flex;
+
+        :global(.MuiBox-root) {
+          line-height: 0;
+        }
+
+        &::after,
+        &::before {
+          display: none;
+        }
+        input {
+          font-weight: 400;
+          font-size: 18px;
+          color: var(--commonTextColor);
+
+          @media (max-width: 767px) {
+            font-size: 14px;
+          }
+
+          &::placeholder {
+            color: var(--commonTextColor);
+            opacity: 1;
+          }
+
+          &:-ms-input-placeholder {
+            color: var(--commonTextColor);
+          }
+
+          &::-ms-input-placeholder {
+            color: var(--commonTextColor);
+          }
+        }
+      }
+    }
+
+    .settings {
+      padding-top: 14px;
+
+      label {
+        color: var(--commonTextColor);
+        font-weight: 600;
+        font-size: 22px;
+        display: inline-block;
+        margin-bottom: 15px;
+
+        @media (max-width: 767px) {
+          font-size: 18px;
+        }
+      }
+
+      .changePasswordWrap {
+        background-color: var(--inputBackground);
+        border: 1px solid rgba(24, 119, 242, 0.2);
+        border-radius: 10px;
+        padding: 9px 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .flexSec {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .passwordTextLeft {
+            padding-left: 15px;
+            font-size: 18px;
+            color: var(--commonTextColor);
+            line-height: 1.5;
+
+            @media (max-width: 767px) {
+              font-size: 14px;
+            }
+
+            p {
+              font-weight: 500;
+            }
+
+            span {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .newGroup {
+    :global(.MuiOutlinedInput-notchedOutline) {
+      display: none;
+    }
+  }
+}
+
+.avatarImg {
+  img {
+    object-fit: contain;
+  }
+}

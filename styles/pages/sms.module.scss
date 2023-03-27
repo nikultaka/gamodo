@@ -1,0 +1,159 @@
+.pageLoginSms {
+  padding: 100px 20px 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+
+  :global(.loginMainBody) {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  :global(.shotdes) {
+    @media (max-width: 575px) {
+      max-width: 228px;
+    }
+  }
+
+  .showSelectCountry {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    background-color: var(--inputBackground);
+    padding: 7px 15px;
+    margin: 40px 0 20px;
+
+    :global(.form-control) {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      font-weight: 400;
+      font-size: 18px;
+      color: var(--commonTextColor);
+      width: 100%;
+
+      &::placeholder {
+        color: var(--placeholderColor);
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: var(--placeholderColor);
+      }
+
+      &::-ms-input-placeholder {
+        color: var(--placeholderColor);
+      }
+    }
+
+    :global(.flag-dropdown) {
+      background-color: transparent !important;
+      border: none;
+
+      :global(.selected-flag) {
+        padding-left: 0;
+        position: relative;
+        width: 44px;
+
+        &:hover,
+        &:focus {
+          background-color: transparent !important;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          // background: linear-gradient(
+          //   180deg,
+          //   rgba(43, 44, 48, 1) 0%,
+          //   rgba(217, 217, 217, 1) 50%,
+          //   rgba(0, 0, 0, 1) 100%
+          // );
+          background-color: var(--vrLineBg);
+        }
+      }
+
+      :global(.arrow) {
+        border-top: 6px solid var(--inputSelectArrowColor);
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        margin: -3px auto;
+      }
+
+      :global(.arrow.up) {
+        border-bottom: 6px solid var(--inputSelectArrowColor);
+      }
+    }
+  }
+
+  :global(.primaryBtn) {
+    svg {
+      margin-right: 15px;
+    }
+  }
+
+  :global(.flag-dropdown.open),
+  :global(.flag-dropdown.open .selected-flag) {
+    background: transparent !important;
+  }
+
+  .inputOtp {
+    padding: 40px 0 20px;
+    max-width: 334px;
+    margin: auto;
+
+    >div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      >div {
+        width: 60px;
+        height: 60px;
+        background-color: var(--homeHeader);
+        border-radius: 10px;
+
+        input {
+          width: 40px !important;
+          height: 60px;
+          border: none;
+          background-color: transparent;
+          color: var(--commonTextColor);
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .resendAction {
+    margin-top: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+    font-size: 14px;
+    font-family: "SFProText";
+    line-height: 16.71px;
+
+    span {
+      color: var(--commonTextColor);
+    }
+
+    b {
+      color: var(--activeColor);
+    }
+  }
+}

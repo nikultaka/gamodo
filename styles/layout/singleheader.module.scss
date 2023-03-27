@@ -1,0 +1,75 @@
+.pageSingleHeader {
+    background-color: var(--homeHeader);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+    padding: 20px;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    :global(.commonTopTitle) {
+        padding: 17px 20px 19px;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        flex-grow: 0;
+        flex-basis: 87%;
+    }
+
+    :global(.commonTopTitle1) {
+      padding: 17px 1px 19px;
+      // display: flex;
+      flex: 1;
+      justify-content: center;
+      flex-grow: 0;
+      flex-basis: 87%;
+  }
+
+    // .single_search {
+    //     margin-bottom: -40px;
+    //     margin-top: 20px;
+    // }
+
+    .singleWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .single_search {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+
+            button {
+                svg {
+                  path {
+                    fill: var(--defaultIconColor);
+                  }
+                }
+              }
+
+              :global(.MuiInputBase-root) {
+                flex-basis: 100%;
+                max-width: 100%;
+                color: var(--commonTextColor);
+              }
+
+              :global(.MuiTouchRipple-root) {
+                display: none;
+              }
+        }
+
+        :global(.closeSearch) {
+            svg {
+              font-size: 20px;
+          
+              path {
+                fill: #a9acb2 !important;
+              }
+            }
+          }
+    }
+}

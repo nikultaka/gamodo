@@ -1,0 +1,8 @@
+@import "../abstracts/variable.module";
+
+.button {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: $commonThemeColor1;
+  color: white;
+}

@@ -1,0 +1,22 @@
+.rewardsPage {
+  text-align: center;
+  padding: 30px 0;
+
+  .rewardsLogo {
+    // margin-bottom: 30px;
+  }
+
+  .firstScreen {
+    .screenRow {
+      margin: 20px auto;
+      max-width: 295px;
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--commonTextColor);
+        margin-top: 20px;
+      }
+    }
+  }
+}
