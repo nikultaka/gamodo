@@ -42,6 +42,7 @@ import {
   Skeleton_upcomingMovies,
 } from "@/components/Skeleton/Skeleton";
 import { Fade, Grid } from "@mui/material";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 // import * as React from 'react';
 import Button from '@mui/material/Button';
@@ -54,6 +55,11 @@ import Slide from '@mui/material/Slide';
 
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
+import LinearProgress, {
+  linearProgressClasses
+} from "@mui/material/LinearProgress";
+import { styled } from "@mui/material/styles";
+
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
 });
@@ -634,6 +640,19 @@ export default function Home() {
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
+  const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 10,
+    // borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+      backgroundColor:
+        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+      // borderRadius: 5,
+      backgroundColor:  "black"
+    }
+  }));
+
   const AuthenticatePop = () => {
     // const [open, setOpen] = React.useState(false);
 
@@ -660,6 +679,8 @@ export default function Home() {
         <Dialog
           open={open}
           TransitionComponent={Transition}
+          fullWidth={true}
+          maxWidth={'sm'}
           keepMounted
           onClose={handleClose}
           aria-describedby="alert-dialog-slide-description"
@@ -670,15 +691,89 @@ export default function Home() {
         >
 
           {/* <DialogTitle>{"Use Google's location service?"}</DialogTitle> */}
-          <DialogContent>
+          <DialogContent style={{ textAlign: "center" }}>
             <Image
               loading="lazy"
               src={assest.DailyRewards}
               alt="rewards"
               height={100}
               width={100}
+              style={{
+                objectFit:"contain"
+              }}
             />
-            <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+            <h5 style={{marginBottom:"5%"}}>{"Creating your account"}</h5>
+            <div style={{ textAlign: "end",marginBottom:"2%" }}>
+              <span>20%</span>
+            </div>
+            <BorderLinearProgress variant="determinate" value={20} />
+            <div style={{ marginTop: "10%",paddingBottom:"0px" }}>
+              <ul class="verifying-list" style={{ textAlign: "start" }}>
+                <li class="verifying-list__item" >
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{
+                      width: 20,
+                      height: 20,
+                      color: "green"
+                    }} />
+                  </div>
+                  <p>50 casino games</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{
+                      width: 20,
+                      height: 20,
+                      color: "green"
+                    }} />
+                  </div>
+                  <p>25 puzzel challanges</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{ visibility: "hidden" }} />
+                  </div>
+                  <p className="pending-varification-text">Daily trivia contests</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{ visibility: "hidden" }} />
+                  </div>
+                  <p className="pending-varification-text">Walmart, Target, Amazon deals</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{ visibility: "hidden" }} />
+                  </div>
+                  <p className="pending-varification-text">Upcoming movie trailers</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{ visibility: "hidden" }} />
+                  </div>
+                  <p className="pending-varification-text">Ip address check</p>
+                </li>
+                <li class="verifying-list__item">
+                  <div class="icon-circle">
+                    <CheckCircleIcon style={{ visibility: "hidden" }} />
+                  </div>
+                  <p className="pending-varification-text">Email address verified</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p style={{fontWeight: 700}}>We cannot verify your account at this time. Please check your email for an activation link from:</p>
+              <h3 style={{marginTop:"10px"}}>support@dailyrewards.me</h3>
+          
+            </div>
+            <div className="primaryBtn home_primarybtn" style={{marginTop:"15px"}} >
+              <MyButton
+              
+                // onClick={() => onClickBtn()}
+              >
+                 <strong>RETRY</strong>
+              </MyButton>
+            </div>
           </DialogContent>
           {/* <DialogActions>
             <Button onClick={handleClose}>Disagree</Button>

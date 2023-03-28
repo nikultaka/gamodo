@@ -88,6 +88,7 @@ body {
 }
 
 @-moz-document url-prefix() {
+
   html,
   body {
     scrollbar-width: none;
@@ -159,6 +160,7 @@ h6 {
   }
 
   .slick-slider {
+
     .slick-track,
     .slick-list {
       transform: inherit !important;
@@ -372,8 +374,7 @@ h6 {
         }
       }
 
-      .videoGame {
-      }
+      .videoGame {}
     }
 
     .moviesCard {
@@ -679,8 +680,7 @@ h6 {
     letter-spacing: 3px;
   }
 
-  100% {
-  }
+  100% {}
 }
 
 @keyframes fade-out {
@@ -809,4 +809,79 @@ mark {
 
 .MuiPagination-root ul li .Mui-selected {
   background-color: #3877f2;
+}
+
+.verifying-list__item {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.verifying-list__item p {
+  font-weight: 700;
+}
+
+.pending-varification-text {
+  color: lightgray;
+}
+
+
+#container_ {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  -moz-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  // width:50%;
+  height: 100%;
+  // border:1px solid;
+}
+
+#container_ div {
+  // width:90%;
+  // color:#fff;
+  // background:black;
+}
+
+#top_,
+#bottom_ {
+  height: 0;
+}
+
+#middle_ {
+  // height: 100px;
+  // display: contents;
+  text-align: center;
+}
+
+#middle_ h1 {
+  margin-bottom: 40%;
+  /* font-family: 'SF Pro Text'; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+#bottom_ span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+}
+.home_primarybtn button{
+  width: 150px !important;
 }

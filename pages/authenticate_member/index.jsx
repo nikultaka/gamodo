@@ -100,27 +100,28 @@ export default function index() {
 
   return (
     <div style={{
-      height: "100vh", display: "flex"
-      , justifyContent: "center", alignItems: "center"
+      height: "100vh"
+      // , display: "flex"
+      // , justifyContent: "center", alignItems: "center"
     }}>
       <Wrapper type={"coupons"} disableFooter>
-        {/* <SingleHeader type={"coupons"} /> */}
-        <div className="pagebody">
-          <h1>Client’s website</h1>
+        <div id='container_'>
+          <div id='top_'></div>
+          <div id='middle_'>
+            <h1>Client’s website</h1>
 
-          <div className="primaryBtn profilebutton">
-            <MyButton
-              onClick={() => onClickBtn()}
-            >
-              <CachedIcon />&nbsp;  Go to Daily Rewards
-            </MyButton>
+            <div className="primaryBtn profilebutton"   style={{ width: "335px" }}>
+              <MyButton
+              
+                onClick={() => onClickBtn()}
+              >
+                <CachedIcon />&nbsp;  Go to Daily Rewards
+              </MyButton>
+            </div>
           </div>
-
-          <div>
+          <div id='bottom_'>
             <span>One or more points goes unchecked</span>
           </div>
-
-
         </div>
       </Wrapper>
     </div>
