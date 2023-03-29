@@ -12,7 +12,7 @@ import MyButton from "@/ui/Buttons/MyButton/MyButton";
 import CachedIcon from '@mui/icons-material/Cached';
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsAuthenticate } from "@/reduxtoolkit/profile.slice";
+import { setIsAuthenticate, setAuthenticateData } from "@/reduxtoolkit/profile.slice";
 
 export default function index() {
   const router = useRouter();
@@ -93,9 +93,12 @@ export default function index() {
   }, []);
 
   const onClickBtn = () => {
+    let data = router?.query && router?.query !== null && router?.query !== undefined ? router?.query : null
     dispatch(setIsAuthenticate(false))
+    dispatch(setAuthenticateData(data))
     router.push("/home_")
   }
+  // console.log(router.query)
 
 
   return (
@@ -110,9 +113,9 @@ export default function index() {
           <div id='middle_'>
             <h1>Client’s website</h1>
 
-            <div className="primaryBtn profilebutton"   style={{ width: "335px" }}>
+            <div className="primaryBtn profilebutton" style={{ width: "335px" }}>
               <MyButton
-              
+
                 onClick={() => onClickBtn()}
               >
                 <CachedIcon />&nbsp;  Go to Daily Rewards

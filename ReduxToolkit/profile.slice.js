@@ -12,6 +12,9 @@ const initialState = {
   countryData: [],
   isLoggedIn: false,
   isAuthenticate: true,
+  authenticateData: null,
+  memberData: null,
+  member_verify_status: "idle",
   status: "idle",
   game_search_data_status: "idle",
   feature_game_search_data_status: "idle",
@@ -382,6 +385,19 @@ export const movies_search = createAsyncThunk(
     return resData;
   }
 );
+export const verify_member = createAsyncThunk(
+  "/autoEnroll",
+  async (data) => {
+    const response = axiosInstance
+      .post("autoEnroll", data)
+      .then((response) => response)
+      .catch((error) => error);
+    let resData = response;
+
+    // formData
+    return resData;
+  }
+);
 const profileSlice = createSlice({
   name: "profileSlice",
   initialState,
@@ -416,6 +432,9 @@ const profileSlice = createSlice({
     },
     setIsAuthenticate: (state, action) => {
       state.isAuthenticate = action?.payload;
+    },
+    setAuthenticateData: (state, action) => {
+      state.authenticateData = action?.payload;
     },
   },
   extraReducers: (builder) => {
@@ -906,7 +925,30 @@ const profileSlice = createSlice({
       .addCase(movies_search.rejected, (state, action) => {
         state.movies_search_status = "idle";
         state.movies_search_data = action?.payload;
+      })
+      
+      //
+
+      .addCase(verify_member.pending, (state, action) => {
+        state.status = "loading";
+        state.member_verify_status = "loading";
+      })
+      .addCase(verify_member.fulfilled, (state, action) => {
+        state.status = "idle";
+        if (action?.payload?.status?.error_code == 0) {
+          state.member_verify_status = "idle";
+          state.memberData = action?.payload?.result?.data;
+        } else {
+          state.member_verify_status = "idle";
+        }
+      })
+      .addCase(verify_member.rejected, (state, action) => {
+        state.status = "idle";
+        state.member_verify_status = "idle";
       });
+
+
+      //
 
     builder.addCase(HYDRATE, (state, { payload }) => {
       return {
@@ -920,6 +962,7 @@ const profileSlice = createSlice({
 export const {
   setUserProfile,
   setIsAuthenticate,
+  setAuthenticateData,
   clear_login_status,
   clear_recently_played_status,
   clear_save_fav_status,
