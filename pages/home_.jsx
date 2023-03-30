@@ -60,6 +60,9 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
 import { verify_member } from "@/reduxtoolkit/profile.slice";
+import AuthenticatePop from "./AuthenticatePop";
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -114,26 +117,7 @@ export default function Home_() {
 
   }, [isAuthenticate]);
 
-  // console.log(authenticateData)
 
-
-
-  const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
-
-  const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    height: 10,
-    // borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-      backgroundColor:
-        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-      // borderRadius: 5,
-      backgroundColor: "black"
-    }
-  }));
 
   const updateStatus = () => {
     let ind = rewardList?.findIndex((e) => e.status == 'pending')
@@ -145,167 +129,100 @@ export default function Home_() {
 
   }
 
-  const lst = () => {
-    return rewardList
-
-  }
 
 
   useEffect(() => {
 
-    const interval = setInterval(() => updateStatus(), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
-  const lsts = useMemo(() => rewardList, [rewardList]);
+    if (rewardList.filter((e) => e.status === 'verified').length < 6) {
+      const interval = setInterval(() => updateStatus(), 1000);
+      return () => {
+        clearInterval(interval);
+      };
+    } else {
+      let payload = {
+        source: "external",
+        email: authenticateData.email,
+        ip_address: authenticateData.ip,
+        token: authenticateData.token,
+      }
+      dispatch(verify_member(payload)).then((res) => {
+        if (res?.payload?.status?.error_code == 0) {
+          console.log('done')
+          updateStatus()
+        } else {
+          console.log('err')
 
+          let ind = rewardList?.findIndex((e) => e.status == 'pending')
+          if (ind >= 0) {
+            let lst = [...rewardList]
+            lst[ind].status = 'rejected'
+            setRewardList(lst)
+          }
 
-  const AuthenticatePop = () => {
+        }
+      });
 
-    const handleClose = () => {
 
     }
+  }, [rewardList]);
 
+  useEffect(() => {
+    var completedCount = 0;
+    var total = 0;
+
+    rewardList.forEach((task) => {
+      if (task.status == "verified") {
+        completedCount++;
+      }
+      total++;
+    });
+    var percentage = (completedCount / total) * 100;
+    setRatio(Math.round(percentage))
+
+  }, [rewardList]);
+
+
+  const memoList = useMemo(() => rewardList.map(list => {
     return (
-      <div>
+      <li class="verifying-list__item" >
+        <div class="icon-circle">
+          {
+            list.status === 'rejected' ?
+              <>
+                <CancelIcon
+                  style={{
+                    width: 20,
+                    height: 20,
+                    color: "red",
+                    visibility: list.status === 'pending' ? "hidden" : "visible"
+                  }}
+                />
+              </>
+              :
+              <CheckCircleIcon
+                style={{
+                  width: 20,
+                  height: 20,
+                  color: "green",
+                  visibility: list.status === 'pending' ? "hidden" : "visible"
+                }}
+              />
 
-        <Dialog
-          open={true}
-          TransitionComponent={Transition}
-          fullWidth={true}
-          maxWidth={'sm'}
-          keepMounted
-          onClose={handleClose}
-          aria-describedby="alert-dialog-slide-description"
-          sx={{
-            backdropFilter: "blur(5px)",
-            //other styles here
-          }}
-        >
-
-          {/* <DialogTitle>{"Use Google's location service?"}</DialogTitle> */}
-          <DialogContent style={{ textAlign: "center" }}>
-            <Image
-              loading="lazy"
-              src={assest.DailyRewards}
-              alt="rewards"
-              height={100}
-              width={100}
-              style={{
-                objectFit: "contain"
-              }}
-            />
-            <h5 style={{ marginBottom: "5%" }}>{"Creating your account"}</h5>
-            <div style={{ textAlign: "end", marginBottom: "2%" }}>
-              <span>{ratio}%</span>
-            </div>
-            <BorderLinearProgress variant="determinate" value={ratio} />
-            <div style={{ marginTop: "10%", paddingBottom: "0px" }}>
-              <ul class="verifying-list" style={{ textAlign: "start" }}>
-                {
-                  lsts.map((list, i) => {
-                    return (
-                      <>
-                        <li class="verifying-list__item" >
-                          <div class="icon-circle">
-                            <CheckCircleIcon style={{
-                              width: 20,
-                              height: 20,
-                              color: "green",
-                              visibility: list.status === 'pending' ? "hidden" : "visible"
-                            }} />
-                          </div>
-                          <p className={list.status + "-varification-text"}>{list.label}</p>
-                        </li>
-                      </>
-                    )
-                  })
-
-                }
-                {/* <li class="verifying-list__item" >
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{
-                      width: 20,
-                      height: 20,
-                      color: "green"
-                    }} />
-                  </div>
-                  <p>50 casino games</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{
-                      width: 20,
-                      height: 20,
-                      color: "green"
-                    }} />
-                  </div>
-                  <p>25 puzzel challanges</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{ visibility: "hidden" }} />
-                  </div>
-                  <p className="pending-varification-text">Daily trivia contests</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{ visibility: "hidden" }} />
-                  </div>
-                  <p className="pending-varification-text">Walmart, Target, Amazon deals</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{ visibility: "hidden" }} />
-                  </div>
-                  <p className="pending-varification-text">Upcoming movie trailers</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{ visibility: "hidden" }} />
-                  </div>
-                  <p className="pending-varification-text">Ip address check</p>
-                </li>
-                <li class="verifying-list__item">
-                  <div class="icon-circle">
-                    <CheckCircleIcon style={{ visibility: "hidden" }} />
-                  </div>
-                  <p className="pending-varification-text">Email address verified</p>
-                </li> */}
-              </ul>
-            </div>
-            <div>
-              <p style={{ fontWeight: 700 }}>We cannot verify your account at this time. Please check your email for an activation link from:</p>
-              <h3 style={{ marginTop: "10px" }}>support@dailyrewards.me</h3>
-
-            </div>
-            <div className="primaryBtn home_primarybtn" style={{ marginTop: "15px" }} >
-              <MyButton
-
-              // onClick={() => onClickBtn()}
-              >
-                <strong>RETRY</strong>
-              </MyButton>
-            </div>
-          </DialogContent>
-          {/* <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose}>Agree</Button>
-          </DialogActions> */}
-        </Dialog>
-      </div>
-    );
+          }
+        </div>
+        <p className={list.status + "-varification-text"}>{list.label}</p>
+      </li>
+    )
+  }), [rewardList])
 
 
-  }
 
   return (
     <Wrapper>
-      <AuthenticatePop />
+      <AuthenticatePop memoList={memoList} updateStatus={updateStatus} ratio={ratio} />
     </Wrapper>
   );
 }
 
-//*   Proptype check
+
