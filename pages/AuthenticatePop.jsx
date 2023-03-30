@@ -33,11 +33,15 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     }
 }));
 
-const AuthenticatePop = ({ memoList, updateStatus, ratio }) => {
+const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRetry }) => {
 
     const handleClose = () => {
 
     }
+
+    let verifyTime = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+    // console.log(verifyTime)
+
 
     return (
         <>
@@ -97,19 +101,42 @@ const AuthenticatePop = ({ memoList, updateStatus, ratio }) => {
 
                         </ul>
                     </div>
-                    <div>
-                        <p style={{ fontWeight: 700 }}>We cannot verify your account at this time. Please check your email for an activation link from:</p>
-                        <h3 style={{ marginTop: "10px" }}>support@dailyrewards.me</h3>
+                    {
+                        rewardList.filter((e) => e.status === 'rejected').length > 0 ?
+                            <>
+                                {
+                                    Number(verifyTime) < 3 ?
+                                        <div className="primaryBtn home_primarybtn" style={{ marginTop: "15px" }} >
+                                            <MyButton
 
-                    </div>
-                    <div className="primaryBtn home_primarybtn" style={{ marginTop: "15px" }} >
-                        <MyButton
+                                                onClick={() => onClickRetry()}
+                                            >
+                                                <strong>RETRY</strong>
+                                            </MyButton>
+                                        </div>
+                                        :
+                                        <div>
+                                            <p style={{ fontWeight: 700 }}>We cannot verify your account at this time. Please check your email for an activation link from:</p>
+                                            <h3 style={{ marginTop: "10px" }}>support@dailyrewards.me</h3>
 
-                            onClick={() => updateStatus()}
-                        >
-                            <strong>RETRY</strong>
-                        </MyButton>
-                    </div>
+                                        </div>
+                                }
+
+
+                            </>
+                            :
+                            <>
+                                {
+                                    rewardList.filter((e) => e.status === 'rejected').length === 0 &&
+                                    rewardList.filter((e) => e.status === 'pending').length === 0 &&
+                                    <>
+                                        {/* <h1>Verified</h1> */}
+                                    </>
+                                }
+
+                            </>
+                    }
+
                 </DialogContent>
                 {/* <DialogActions>
             <Button onClick={handleClose}>Disagree</Button>

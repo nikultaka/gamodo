@@ -108,22 +108,22 @@ export default function Home_() {
 
   ]);
 
-  useEffect(() => {
-    if (!isAuthenticate) {
-      setOpen(true)
-    } else {
-      setOpen(false)
-    }
+  // useEffect(() => {
+  //   if (!isAuthenticate) {
+  //     setOpen(true)
+  //   } else {
+  //     setOpen(false)
+  //   }
 
-  }, [isAuthenticate]);
+  // }, [isAuthenticate]);
 
 
 
-  const updateStatus = () => {
+  const updateStatus = (status) => {
     let ind = rewardList?.findIndex((e) => e.status == 'pending')
     if (ind >= 0) {
       let lst = [...rewardList]
-      lst[ind].status = 'verified'
+      lst[ind].status = status
       setRewardList(lst)
     }
 
@@ -135,33 +135,40 @@ export default function Home_() {
 
 
     if (rewardList.filter((e) => e.status === 'verified').length < 6) {
-      const interval = setInterval(() => updateStatus(), 1000);
+      const interval = setInterval(() => updateStatus('verified'), 1000);
       return () => {
         clearInterval(interval);
       };
     } else {
+
+      // console.log(authenticateData)
+
       let payload = {
         source: "external",
-        email: authenticateData.email,
-        ip_address: authenticateData.ip,
-        token: authenticateData.token,
+        email: authenticateData?.email,
+        ip_address: authenticateData?.ip,
+        token: authenticateData?.token,
       }
-      dispatch(verify_member(payload)).then((res) => {
-        if (res?.payload?.status?.error_code == 0) {
-          console.log('done')
-          updateStatus()
-        } else {
-          console.log('err')
 
-          let ind = rewardList?.findIndex((e) => e.status == 'pending')
-          if (ind >= 0) {
-            let lst = [...rewardList]
-            lst[ind].status = 'rejected'
-            setRewardList(lst)
+      if (authenticateData && authenticateData?.email) {
+
+
+        dispatch(verify_member(payload)).then((res) => {
+          if (res?.payload?.status?.error_code == 0) {
+            console.log('done')
+            updateStatus('verified')
+          } else {
+            console.log('err')
+            updateStatus('rejected')
+          
+
           }
+        });
 
-        }
-      });
+      } else {
+        updateStatus('rejected')
+
+      }
 
 
     }
