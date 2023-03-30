@@ -45,13 +45,14 @@ import { Fade, Grid } from "@mui/material";
 
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
+import VerifyAccountPop from "./VerifyAccountPop";
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
 });
 
 const cookie = new Cookies();
 export default function Home() {
-  const { favourite_list } = useSelector((state) => state?.profile);
+  const { favourite_list, memberData } = useSelector((state) => state?.profile);
   const dispatch = useDispatch();
   const token = cookie.get("token");
 
@@ -177,7 +178,7 @@ export default function Home() {
       refetchOnWindowFocus: false,
     }
   );
-  
+
 
   const { data: featuredGameListData, isLoading: featuredGameListDataLoading } =
     useQuery(
@@ -613,6 +614,10 @@ export default function Home() {
 
   return (
     <Wrapper>
+      {
+        console.log('memberData', memberData)
+      }
+      <VerifyAccountPop memberData={memberData} />
       <div className="pagebody">
         <div className="couponSlider">
           <div className="secHeading">

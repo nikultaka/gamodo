@@ -9,8 +9,8 @@ export const getLoginApiUrl = (hostname) => {
   ) {
     hostname = defaultHostName;
   }
-  return `https://login.${hostname}/api/v1`;
-  // return "https://login.gamodo.net/api/v1";
+  // return `https://login.${hostname}/api/v1`;
+  return "https://login.gamodo.net/api/v1";
 };
 
 const hostname = getCookieClient("hostname");

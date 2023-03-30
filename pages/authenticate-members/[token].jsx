@@ -25,9 +25,7 @@ const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
 export default function index() {
   const router = useRouter();
   const dispatch = useDispatch();
-
-
-
+  const { isAuthenticate, authenticateData, memberData, member_verify_status } = useSelector((state) => state?.profile);
   const { email, ip, token } = router?.query
 
   const [ratio, setRatio] = React.useState(0);
@@ -106,12 +104,15 @@ export default function index() {
         if (email && ip && token) {
           dispatch(verify_member(payload)).then((res) => {
             if (res?.payload?.status?.error_code == 0) {
+              // console.log(res?.payload.result.data)
               updateStatus('verified', 5)
               updateStatus('verified', 6)
               localStorage.setItem("verificationCount", 0)
+              localStorage.setItem("accountVerification", true)
+              router.push("/home")
 
             } else {
-              console.log('e1')
+              // console.log('e1')
               updateStatus('rejected', 5)
               updateStatus('rejected', 6)
 
@@ -127,7 +128,7 @@ export default function index() {
 
         }
       } else {
-        console.log('e3')
+        // console.log('e3')
         // updateStatus('rejected', 5)
         // updateStatus('rejected', 6)
       }
