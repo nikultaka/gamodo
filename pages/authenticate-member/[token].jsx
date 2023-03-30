@@ -86,13 +86,13 @@ export default function index() {
     let interval;
     if (rewardList.filter((e) => e.status === 'verified').length < 5) {
       interval = setInterval(() => updateStatus('verified'), 1000);
-      return () => {
-        clearInterval(interval);
-      };
+      // return () => {
+      //   clearInterval(interval);
+      // };
     } else {
       let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
 
-      if (rewardList.filter((e) => e.status === 'pending').length > 0 && count < 3) {
+      if (rewardList.filter((e) => e.status === 'pending').length > 0 && count !== 3) {
 
         clearInterval(interval);
 
@@ -111,6 +111,7 @@ export default function index() {
               localStorage.setItem("verificationCount", 0)
 
             } else {
+              console.log('e1')
               updateStatus('rejected', 5)
               updateStatus('rejected', 6)
 
@@ -119,14 +120,16 @@ export default function index() {
           });
         } else {
 
+          console.log('e2')
+
           updateStatus('rejected', 5)
           updateStatus('rejected', 6)
 
         }
       } else {
-
-        updateStatus('rejected', 5)
-        updateStatus('rejected', 6)
+        console.log('e3')
+        // updateStatus('rejected', 5)
+        // updateStatus('rejected', 6)
       }
 
 
@@ -134,7 +137,7 @@ export default function index() {
     return () => {
       clearInterval(interval);
     };
-  }, [lst]);
+  }, [rewardList]);
 
 
   useEffect(() => {
