@@ -23,7 +23,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import assest from "@/json/assest";
 import WatchTrailers from "@/components/WatchTrailers/WatchTrailers";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import GamesCard from "@/components/ProductCard/GamesCard";
 import TargetdealCard from "@/components/ProductCard/TargetdealCard";
@@ -42,10 +42,13 @@ import {
   Skeleton_upcomingMovies,
 } from "@/components/Skeleton/Skeleton";
 import { Fade, Grid } from "@mui/material";
+import useNotiStack from "@/hooks/useNotistack";
 
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
 import VerifyAccountPop from "./VerifyAccountPop";
+import { resendActivationEmail } from "@/reduxtoolkit/profile.slice";
+
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
 });
@@ -55,6 +58,9 @@ export default function Home() {
   const { favourite_list, memberData } = useSelector((state) => state?.profile);
   const dispatch = useDispatch();
   const token = cookie.get("token");
+  const { toastSuccess, toastError } = useNotiStack();
+  const [open, setOpen] = useState(false)
+
 
   useEffect(() => {
     cookie.set("isFirst", false, {
@@ -612,12 +618,34 @@ export default function Home() {
     ];
   }, []);
 
+  const onClickResend = () => {
+    let payload = {}
+    // payload.email = memberData.email
+    payload.source = "external"
+
+
+    dispatch(resendActivationEmail(payload, memberData?.token)).then((res) => {
+      if (res?.payload?.status?.error_code == 0) {
+        toastSuccess(res?.payload?.status?.message);
+        setOpen(false)
+
+      } else {
+        toastError(res?.payload?.status?.message);
+        setOpen(false)
+      }
+      localStorage.removeItem('accountVerification');
+    });
+
+
+  }
+
   return (
     <Wrapper>
       {
         console.log('memberData', memberData)
       }
-      <VerifyAccountPop memberData={memberData} />
+      <VerifyAccountPop memberData={memberData} onClickResend={onClickResend} 
+      open={open} setOpen={setOpen} />
       <div className="pagebody">
         <div className="couponSlider">
           <div className="secHeading">

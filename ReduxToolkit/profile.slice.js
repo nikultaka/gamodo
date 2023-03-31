@@ -15,6 +15,7 @@ const initialState = {
   authenticateData: null,
   memberData: null,
   member_verify_status: "idle",
+  member_email_verify_status: "idle",
   status: "idle",
   game_search_data_status: "idle",
   feature_game_search_data_status: "idle",
@@ -390,6 +391,24 @@ export const verify_member = createAsyncThunk(
   async (data) => {
     const response = axiosInstance
       .post("autoEnroll", data)
+      .then((response) => response)
+      .catch((error) => error);
+    let resData = response;
+
+    // formData
+    return resData;
+  }
+);
+
+export const resendActivationEmail = createAsyncThunk(
+  "/api/resendActivationEmail",
+  async (data, token) => {
+    const response = axiosInstance
+      .post("resendActivationEmail", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => response)
       .catch((error) => error);
     let resData = response;
@@ -926,7 +945,7 @@ const profileSlice = createSlice({
         state.movies_search_status = "idle";
         state.movies_search_data = action?.payload;
       })
-      
+
       //
 
       .addCase(verify_member.pending, (state, action) => {
@@ -945,10 +964,33 @@ const profileSlice = createSlice({
       .addCase(verify_member.rejected, (state, action) => {
         state.status = "idle";
         state.member_verify_status = "idle";
-      });
+      })
 
 
-      //
+    //
+
+    //---
+
+    .addCase(resendActivationEmail.pending, (state, action) => {
+      state.status = "loading";
+      state.member_email_verify_status = "loading";
+    })
+    .addCase(resendActivationEmail.fulfilled, (state, action) => {
+      state.status = "idle";
+      if (action?.payload?.status?.error_code == 0) {
+        state.member_email_verify_status = "idle";
+        // state.memberData = action?.payload?.result?.data;
+      } else {
+        state.member_email_verify_status = "idle";
+      }
+    })
+    .addCase(resendActivationEmail.rejected, (state, action) => {
+      state.status = "idle";
+      state.member_email_verify_status = "idle";
+    });
+
+
+    //---
 
     builder.addCase(HYDRATE, (state, { payload }) => {
       return {

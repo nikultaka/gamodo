@@ -18,30 +18,17 @@ import Image from "next/image";
 // import { makeStyles } from "@material-ui/core/styles";
 import { makeStyles } from '@mui/styles';
 import Modal from '@mui/material/Modal';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    height: 10,
-    // borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-        backgroundColor:
-            theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-        // borderRadius: 5,
-        backgroundColor: "black"
-    }
-}));
 
+const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen }) => {
 
-const VerifyAccountPop = ({memberData}) => {
-
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
 
     const useStyles = makeStyles({
         topScrollPaper: {
@@ -51,20 +38,21 @@ const VerifyAccountPop = ({memberData}) => {
             verticalAlign: "top"
         }
     });
-    
+
     const classes = useStyles();
 
     useEffect(() => {
-        if(memberData && !memberData.password_exist && localStorage.getItem('accountVerification')){
+        if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
             setOpen(true)
         }
-   
+
     }, [memberData])
-    
+
 
 
     const handleClose = () => {
-
+        setOpen(false)
+        localStorage.removeItem('accountVerification');
     }
 
     return (
@@ -81,7 +69,7 @@ const VerifyAccountPop = ({memberData}) => {
                     scrollPaper: classes.topScrollPaper,
                     paperScrollBody: classes.topPaperScrollBody
                 }}
-         
+
             >
 
                 <DialogTitle id="alert-dialog-title">
@@ -89,16 +77,16 @@ const VerifyAccountPop = ({memberData}) => {
                 </DialogTitle>
                 <DialogContent style={{ textAlign: "center" }}>
                     <DialogContentText id="alert-dialog-description">
-                    <h4>{memberData?.email}</h4>
+                        <h4>{memberData?.email}</h4>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions style={{ justifyContent: "space-between" }}>
                     <Button onClick={handleClose}>Change</Button>
-                    <Button onClick={handleClose} >
+                    <Button onClick={onClickResend} >
                         Resend
                     </Button>
                 </DialogActions>
-         
+
             </Dialog>
         </>
     );
