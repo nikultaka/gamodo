@@ -47,7 +47,8 @@ import useNotiStack from "@/hooks/useNotistack";
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
 import VerifyAccountPop from "./VerifyAccountPop";
-import { resendActivationEmail } from "@/reduxtoolkit/profile.slice";
+import { resendActivationEmail, changeActivationEmail } from "@/reduxtoolkit/profile.slice";
+import ChangeEmailPop from "./ChangeEmailPop";
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -60,6 +61,9 @@ export default function Home() {
   const token = cookie.get("token");
   const { toastSuccess, toastError } = useNotiStack();
   const [open, setOpen] = useState(false)
+  const [openChangeEmailPopup, setOpenChangeEmailPopup] = useState(false)
+  const [email, setEmail] = useState('')
+
 
 
   useEffect(() => {
@@ -620,11 +624,11 @@ export default function Home() {
 
   const onClickResend = () => {
     let payload = {}
-    // payload.email = memberData.email
-    payload.source = "external"
+    payload.data = {}
+    payload.data.source = "external"
+    payload.token = memberData?.token
 
-
-    dispatch(resendActivationEmail(payload, memberData?.token)).then((res) => {
+    dispatch(resendActivationEmail(payload)).then((res) => {
       if (res?.payload?.status?.error_code == 0) {
         toastSuccess(res?.payload?.status?.message);
         setOpen(false)
@@ -636,16 +640,70 @@ export default function Home() {
       localStorage.removeItem('accountVerification');
     });
 
+  }
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  const handleChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const onClickChange = () => {
+    setOpenChangeEmailPopup(true)
+  }
+
+
+  const onClickChangeEmail = () => {
+    let payload = {}
+    payload.data = {}
+    payload.data.email = email
+    payload.data.source = "external"
+    payload.token = memberData?.token
+
+    dispatch(changeActivationEmail(payload)).then((res) => {
+      if (res?.payload?.status?.error_code == 0) {
+        toastSuccess(res?.payload?.status?.message);
+        setOpenChangeEmailPopup(false)
+        setOpen(false)
+        setEmail('')
+
+      } else {
+        toastError(res?.payload?.status?.message);
+        // setOpen(false)
+      }
+      localStorage.removeItem('accountVerification');
+    });
 
   }
 
   return (
     <Wrapper>
       {
-        console.log('memberData', memberData)
+        // console.log('memberData', memberData?.token)
       }
-      <VerifyAccountPop memberData={memberData} onClickResend={onClickResend} 
-      open={open} setOpen={setOpen} />
+      <VerifyAccountPop
+        memberData={memberData}
+        onClickResend={onClickResend}
+        open={open}
+        setOpen={setOpen}
+        onClickChange={onClickChange}
+      />
+
+      <ChangeEmailPop
+        open={openChangeEmailPopup}
+        setOpen={setOpenChangeEmailPopup}
+        email={email}
+        handleChange={handleChange}
+        validateEmail={validateEmail}
+        onClickChangeEmail={onClickChangeEmail}
+      />
+
       <div className="pagebody">
         <div className="couponSlider">
           <div className="secHeading">

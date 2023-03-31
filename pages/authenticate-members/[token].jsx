@@ -89,8 +89,10 @@ export default function index() {
       // };
     } else {
       let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+      let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 3;
 
-      if (rewardList.filter((e) => e.status === 'pending').length > 0 && count !== 3) {
+
+      if (rewardList.filter((e) => e.status === 'pending').length > 0 && Number(count) !== Number(enrollMaxLimit)) {
 
         clearInterval(interval);
 
@@ -112,7 +114,12 @@ export default function index() {
               router.push("/home")
 
             } else {
-              // console.log('e1')
+              let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+              localStorage.setItem("verificationCount", Number(c) + 1);
+              // console.log(res?.payload.result?.data?.autoenroll_max_retry_limit)
+              if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
+                localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit))
+              }
               updateStatus('rejected', 5)
               updateStatus('rejected', 6)
 
@@ -192,8 +199,7 @@ export default function index() {
 
 
   const onClickRetry = () => {
-    let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-    localStorage.setItem("verificationCount", Number(count) + 1);
+
     updateStatus('pending', 5)
     updateStatus('pending', 6)
   }

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
 import axiosInstance from "@/axios/authAxiosInstance";
 import axiosInstance1 from "@/axios/axiosInstance";
+import newaxiosInstance from "@/axios/newAuthAxiosInstance"
 import { Cookies } from "react-cookie";
 import { HYDRATE } from "next-redux-wrapper";
 
@@ -16,6 +17,7 @@ const initialState = {
   memberData: null,
   member_verify_status: "idle",
   member_email_verify_status: "idle",
+  member_email_change_status: "idle",
   status: "idle",
   game_search_data_status: "idle",
   feature_game_search_data_status: "idle",
@@ -402,13 +404,15 @@ export const verify_member = createAsyncThunk(
 
 export const resendActivationEmail = createAsyncThunk(
   "/api/resendActivationEmail",
-  async (data, token) => {
-    const response = axiosInstance
-      .post("resendActivationEmail", data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+  async (data) => {
+    const response = newaxiosInstance
+      .post("resendActivationEmail", data.data,
+
+        {
+          headers: {
+            Authorization: `Bearer ${data.token}`,
+          },
+        })
       .then((response) => response)
       .catch((error) => error);
     let resData = response;
@@ -417,6 +421,25 @@ export const resendActivationEmail = createAsyncThunk(
     return resData;
   }
 );
+export const changeActivationEmail = createAsyncThunk(
+  "/api/changeActivationEmail",
+  async (data) => {
+    const response = newaxiosInstance
+      .post("changeActivationEmail", data.data,
+
+        {
+          headers: {
+            Authorization: `Bearer ${data.token}`,
+          },
+        })
+      .then((response) => response)
+      .catch((error) => error);
+    let resData = response;
+
+    return resData;
+  }
+);
+
 const profileSlice = createSlice({
   name: "profileSlice",
   initialState,
@@ -967,27 +990,50 @@ const profileSlice = createSlice({
       })
 
 
-    //
+      //
+
+      //---
+
+      .addCase(resendActivationEmail.pending, (state, action) => {
+        state.status = "loading";
+        state.member_email_verify_status = "loading";
+      })
+      .addCase(resendActivationEmail.fulfilled, (state, action) => {
+        state.status = "idle";
+        if (action?.payload?.status?.error_code == 0) {
+          state.member_email_verify_status = "idle";
+          // state.memberData = action?.payload?.result?.data;
+        } else {
+          state.member_email_verify_status = "idle";
+        }
+      })
+      .addCase(resendActivationEmail.rejected, (state, action) => {
+        state.status = "idle";
+        state.member_email_verify_status = "idle";
+      })
+
 
     //---
 
-    .addCase(resendActivationEmail.pending, (state, action) => {
+    .addCase(changeActivationEmail.pending, (state, action) => {
       state.status = "loading";
-      state.member_email_verify_status = "loading";
+      state.member_email_change_status = "loading";
     })
-    .addCase(resendActivationEmail.fulfilled, (state, action) => {
+    .addCase(changeActivationEmail.fulfilled, (state, action) => {
       state.status = "idle";
       if (action?.payload?.status?.error_code == 0) {
-        state.member_email_verify_status = "idle";
+        state.member_email_change_status = "idle";
         // state.memberData = action?.payload?.result?.data;
       } else {
-        state.member_email_verify_status = "idle";
+        state.member_email_change_status = "idle";
       }
     })
-    .addCase(resendActivationEmail.rejected, (state, action) => {
+    .addCase(changeActivationEmail.rejected, (state, action) => {
       state.status = "idle";
-      state.member_email_verify_status = "idle";
+      state.member_email_change_status = "idle";
     });
+
+
 
 
     //---

@@ -26,7 +26,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 
-const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen }) => {
+const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen , onClickChange }) => {
 
     // const [open, setOpen] = useState(false)
 
@@ -63,12 +63,13 @@ const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen }) => {
                 fullWidth={true}
                 maxWidth={'sm'}
                 keepMounted
-                onClose={handleClose}
+                // onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
                 classes={{
                     scrollPaper: classes.topScrollPaper,
                     paperScrollBody: classes.topPaperScrollBody
                 }}
+                disableBackdropClick 
 
             >
 
@@ -81,7 +82,7 @@ const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen }) => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions style={{ justifyContent: "space-between" }}>
-                    <Button onClick={handleClose}>Change</Button>
+                    <Button onClick={onClickChange}>Change</Button>
                     <Button onClick={onClickResend} >
                         Resend
                     </Button>
