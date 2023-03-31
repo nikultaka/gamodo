@@ -19,7 +19,7 @@ import Image from "next/image";
 import { makeStyles } from '@mui/styles';
 import Modal from '@mui/material/Modal';
 import { useState, useEffect } from 'react';
-
+import WarningIcon from '@mui/icons-material/Warning';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -73,9 +73,9 @@ const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen }) => {
             >
 
                 <DialogTitle id="alert-dialog-title">
-                    <h4>{"Please check your email to verify your account."}</h4>
+                    <h4><div style={{display:"flex",gap:"5px"}}><WarningIcon style={{color:"red"}}/>&nbsp;<span>{"Please check your email to verify your account."}</span></div></h4>
                 </DialogTitle>
-                <DialogContent style={{ textAlign: "center" }}>
+                <DialogContent style={{ textAlign: "center",padding:"unset" }}>
                     <DialogContentText id="alert-dialog-description">
                         <h4>{memberData?.email}</h4>
                     </DialogContentText>
