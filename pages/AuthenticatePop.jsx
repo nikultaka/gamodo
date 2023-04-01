@@ -40,7 +40,7 @@ const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRet
     }
 
     let verifyTime = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-    let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 3;
+    let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
 
     console.log('enrollMaxLimit', enrollMaxLimit)
 
@@ -107,7 +107,7 @@ const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRet
                         rewardList.filter((e) => e.status === 'rejected').length > 0 ?
                             <>
                                 {
-                                    Number(verifyTime) < Number(3) ?
+                                    Number(verifyTime) < Number(enrollMaxLimit) ?
                                         <div className="primaryBtn home_primarybtn" style={{ marginTop: "15px" }} >
                                             <MyButton
 

@@ -79,6 +79,9 @@ export default function index() {
 
 
   useEffect(() => {
+    if (!localStorage.getItem("verificationCount")) {
+      localStorage.setItem("verificationCount", 0);
+    }
 
 
     let interval;
@@ -89,7 +92,7 @@ export default function index() {
       // };
     } else {
       let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-      let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 3;
+      let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
 
 
       if (rewardList.filter((e) => e.status === 'pending').length > 0 && Number(count) !== Number(enrollMaxLimit)) {
@@ -118,7 +121,7 @@ export default function index() {
               localStorage.setItem("verificationCount", Number(c) + 1);
               // console.log(res?.payload.result?.data?.autoenroll_max_retry_limit)
               if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
-                localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit))
+                localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit) + 1)
               }
               updateStatus('rejected', 5)
               updateStatus('rejected', 6)
@@ -135,6 +138,12 @@ export default function index() {
 
         }
       } else {
+        let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+        let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
+        if (c === enrollMaxLimit) {
+          updateStatus('rejected', 5)
+          updateStatus('rejected', 6)
+        }
         // console.log('e3')
         // updateStatus('rejected', 5)
         // updateStatus('rejected', 6)
