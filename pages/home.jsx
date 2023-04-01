@@ -655,6 +655,7 @@ export default function Home() {
   }
 
   const onClickChange = () => {
+    setEmail('')
     setOpenChangeEmailPopup(true)
   }
 
