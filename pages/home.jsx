@@ -46,9 +46,11 @@ import useNotiStack from "@/hooks/useNotistack";
 
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
-import VerifyAccountPop from "./VerifyAccountPop";
+// import VerifyAccountPop from "./VerifyAccountPop";
+import VerifyAccountPop from "@/components/Popups/VerifyAccountPop";
 import { resendActivationEmail, changeActivationEmail } from "@/reduxtoolkit/profile.slice";
-import ChangeEmailPop from "./ChangeEmailPop";
+// import ChangeEmailPop from "./ChangeEmailPop";
+import ChangeEmailPop from "@/components/Popups/ChangeEmailPop";
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,

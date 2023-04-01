@@ -16,7 +16,9 @@ import { setIsAuthenticate, setAuthenticateData } from "@/reduxtoolkit/profile.s
 import { verify_member } from "@/reduxtoolkit/profile.slice";
 import CancelIcon from '@mui/icons-material/Cancel';
 import dynamic from "next/dynamic";
-import AuthenticatePop from "../AuthenticatePop";
+// import AuthenticatePop from "../../Components/Popups/AuthenticatePop";
+import AuthenticatePop from "@/components/Popups/AuthenticatePop";
+
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -79,6 +81,7 @@ export default function index() {
 
 
   useEffect(() => {
+    localStorage.setItem("isExternalUser", true)
     if (!localStorage.getItem("verificationCount")) {
       localStorage.setItem("verificationCount", 0);
     }

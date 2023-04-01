@@ -11,8 +11,13 @@ export function middleware(request) {
     has_token === undefined ||
     has_token === null
   ) {
-    request.nextUrl.pathname = "/login";
-    return NextResponse.redirect(request.nextUrl);
+
+    if (!localStorage.getItem("isExternalUser")) {
+      request.nextUrl.pathname = "/login";
+      return NextResponse.redirect(request.nextUrl);
+    }else{
+      return NextResponse.next();
+    }
   } else {
     const userAgent = request?.headers?.get("user-agent");
     let userAgentMobileMatchResult = matchMobileUserAgent(userAgent);

@@ -42,7 +42,7 @@ const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRet
     let verifyTime = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
     let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
 
-    console.log('enrollMaxLimit', enrollMaxLimit)
+    // console.log('enrollMaxLimit', enrollMaxLimit)
 
 
     return (
