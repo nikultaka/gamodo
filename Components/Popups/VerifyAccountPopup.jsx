@@ -26,7 +26,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 
-const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen , onClickChange }) => {
+const VerifyAccountPopup = ({ memberData, onClickResend, open, setOpen , onClickChange }) => {
 
     // const [open, setOpen] = useState(false)
 
@@ -95,4 +95,4 @@ const VerifyAccountPop = ({ memberData, onClickResend, open, setOpen , onClickCh
 
 }
 
-export default memo(VerifyAccountPop);
+export default memo(VerifyAccountPopup);

@@ -47,10 +47,10 @@ import useNotiStack from "@/hooks/useNotistack";
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
 // import VerifyAccountPop from "./VerifyAccountPop";
-import VerifyAccountPop from "@/components/Popups/VerifyAccountPop";
+import VerifyAccountPopup from "@/components/Popups/VerifyAccountPopup";
 import { resendActivationEmail, changeActivationEmail } from "@/reduxtoolkit/profile.slice";
 // import ChangeEmailPop from "./ChangeEmailPop";
-import ChangeEmailPop from "@/components/Popups/ChangeEmailPop";
+import ChangeEmailPopup from "@/components/Popups/ChangeEmailPopup";
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -675,12 +675,13 @@ export default function Home() {
         setOpenChangeEmailPopup(false)
         setOpen(false)
         setEmail('')
+        localStorage.removeItem('accountVerification');
+
 
       } else {
         toastError(res?.payload?.status?.message);
         // setOpen(false)
       }
-      localStorage.removeItem('accountVerification');
     });
 
   }
@@ -690,7 +691,7 @@ export default function Home() {
       {
         // console.log('memberData', memberData?.token)
       }
-      <VerifyAccountPop
+      <VerifyAccountPopup
         memberData={memberData}
         onClickResend={onClickResend}
         open={open}
@@ -698,7 +699,7 @@ export default function Home() {
         onClickChange={onClickChange}
       />
 
-      <ChangeEmailPop
+      <ChangeEmailPopup
         open={openChangeEmailPopup}
         setOpen={setOpenChangeEmailPopup}
         email={email}

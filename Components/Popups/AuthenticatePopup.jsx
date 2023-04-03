@@ -33,7 +33,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     }
 }));
 
-const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRetry }) => {
+const AuthenticatePopup = ({ memoList, updateStatus, ratio, rewardList, onClickRetry }) => {
 
     const handleClose = () => {
 
@@ -151,4 +151,4 @@ const AuthenticatePop = ({ memoList, updateStatus, ratio, rewardList, onClickRet
 
 }
 
-export default memo(AuthenticatePop);
+export default memo(AuthenticatePopup);

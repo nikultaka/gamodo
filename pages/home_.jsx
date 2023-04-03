@@ -60,7 +60,7 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
 import { verify_member } from "@/reduxtoolkit/profile.slice";
-import AuthenticatePop from "../Components/Popups/AuthenticatePop";
+import AuthenticatePop from "../Components/Popups/AuthenticatePopup";
 import CancelIcon from '@mui/icons-material/Cancel';
 
 

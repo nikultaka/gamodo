@@ -17,7 +17,7 @@ import { verify_member } from "@/reduxtoolkit/profile.slice";
 import CancelIcon from '@mui/icons-material/Cancel';
 import dynamic from "next/dynamic";
 // import AuthenticatePop from "../../Components/Popups/AuthenticatePop";
-import AuthenticatePop from "@/components/Popups/AuthenticatePop";
+import AuthenticatePopup from "@/components/Popups/AuthenticatePopup";
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
@@ -258,7 +258,7 @@ export default function index() {
     //   </Wrapper>
     // </div>
     <Wrapper>
-      <AuthenticatePop memoList={memoList} updateStatus={updateStatus} ratio={ratio} rewardList={rewardList} onClickRetry={onClickRetry} />
+      <AuthenticatePopup memoList={memoList} updateStatus={updateStatus} ratio={ratio} rewardList={rewardList} onClickRetry={onClickRetry} />
     </Wrapper>
   );
 }

@@ -103,7 +103,7 @@ function BootstrapDialogTitle(props) {
 
 
 
-const ChangeEmailPop = ({ open, setOpen, email, handleChange, validateEmail, onClickChangeEmail }) => {
+const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, onClickChangeEmail }) => {
 
 
     const handleClose = () => {
@@ -162,4 +162,4 @@ const ChangeEmailPop = ({ open, setOpen, email, handleChange, validateEmail, onC
 
 }
 
-export default memo(ChangeEmailPop);
+export default memo(ChangeEmailPopup);

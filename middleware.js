@@ -12,10 +12,10 @@ export function middleware(request) {
     has_token === null
   ) {
 
-    if (!localStorage.getItem("isExternalUser")) {
+    if (typeof window !== 'undefined' && !localStorage?.getItem("isExternalUser")) {
       request.nextUrl.pathname = "/login";
       return NextResponse.redirect(request.nextUrl);
-    }else{
+    } else {
       return NextResponse.next();
     }
   } else {
