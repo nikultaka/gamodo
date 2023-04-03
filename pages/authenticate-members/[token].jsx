@@ -18,7 +18,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import dynamic from "next/dynamic";
 // import AuthenticatePop from "../../Components/Popups/AuthenticatePop";
 import AuthenticatePopup from "@/components/Popups/AuthenticatePopup";
-
+import { Cookies } from "react-cookie";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -27,6 +27,7 @@ const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
 export default function index() {
   const router = useRouter();
   const dispatch = useDispatch();
+  const cookie = new Cookies();
   const { isAuthenticate, authenticateData, memberData, member_verify_status } = useSelector((state) => state?.profile);
   const { email, ip, token } = router?.query
 
@@ -113,6 +114,18 @@ export default function index() {
           dispatch(verify_member(payload)).then((res) => {
             if (res?.payload?.status?.error_code == 0) {
               // console.log(res?.payload.result.data)
+              cookie.set("external-token", res?.payload?.result?.data?.token, {
+                path: "/",
+                maxAge: 86400, // Expires after 1 day
+                sameSite: true,
+              });
+
+              cookie.set("token", res?.payload?.result?.data?.token, {
+                path: "/",
+                maxAge: 86400, // Expires after 1 day
+                sameSite: true,
+              });
+
               updateStatus('verified', 5)
               updateStatus('verified', 6)
               localStorage.setItem("verificationCount", 0)
