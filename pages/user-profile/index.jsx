@@ -102,20 +102,20 @@ const validationSchema = yup.object().shape({
     .required("Last name is required")
     .matches(/^[A-Za-z ]*$/, "Please enter valid last name")
     .max(20, "You cannot enter more than 20 characters"),
-  address: yup.string().required("Address is required"),
-  city: yup.string().required("City name is required"),
-  region: yup.string().required("Region is required"),
+  // address: yup.string().required("Address is required"),
+  // city: yup.string().required("City name is required"),
+  // region: yup.string().required("Region is required"),
   phone_no: yup
     .string()
     .required("Phone number is required")
     .matches(/^[0-9]*$/, "Please enter a valid phone number")
     .transform((value) => value),
-  zip: yup
-    .string()
-    .required("Zip code is required")
-    .matches(/^[0-9]*$/, "Please enter a valid zip code")
-    .max(6, "Please enter valid zip code")
-    .transform((value) => value),
+  // zip: yup
+  //   .string()
+  //   .required("Zip code is required")
+  //   .matches(/^[0-9]*$/, "Please enter a valid zip code")
+  //   .max(6, "Please enter valid zip code")
+  //   .transform((value) => value),
   email_address: yup
     .string()
     .email("Please enter a valid email")
@@ -181,31 +181,34 @@ function index() {
   });
 
   const onSubmit = (data) => {
-    if (country_ID == undefined) {
-      seterror("Please select any country");
-    } else if (country_ID !== undefined) {
-      seterror("");
-    }
+    // console.log(data)
+    // console.log(country_ID)
+
+    // if (country_ID == undefined) {
+    //   seterror("Please select any country");
+    // } else if (country_ID !== undefined) {
+    //   seterror("");
+    // }
     let formData = new FormData();
-    if (data && country_ID != undefined) {
-      formData.append("profile_image", profile_image);
-      formData.append("source", "external");
-      formData.append("first_name", data?.first_name);
-      formData.append("last_name", data?.last_name);
-      formData.append("phone", data?.phone_no);
-      formData.append("address", data?.address);
-      formData.append("region", data?.region);
-      formData.append("zip", data?.zip);
-      formData.append("city", data?.city);
-      formData.append("country_id", country_ID);
-      dispatch(profile_update(formData)).then((res) => {
-        if (res?.payload?.status?.error_code == 0) {
-          toastSuccess(res?.payload?.status?.message);
-        } else {
-          toastError(res?.payload?.status?.message);
-        }
-      });
-    }
+    // if (data && country_ID != undefined) {
+    // formData.append("profile_image", profile_image);
+    formData.append("source", "external");
+    formData.append("first_name", data?.first_name);
+    formData.append("last_name", data?.last_name);
+    formData.append("phone", data?.phone_no);
+    formData.append("address", data?.address);
+    formData.append("region", data?.region);
+    formData.append("zip", data?.zip);
+    formData.append("city", data?.city);
+    formData.append("country_id", country_ID);
+    dispatch(profile_update(formData)).then((res) => {
+      if (res?.payload?.status?.error_code == 0) {
+        toastSuccess(res?.payload?.status?.message);
+      } else {
+        toastError(res?.payload?.status?.message);
+      }
+    });
+    // }
   };
 
   const { availableThemes, currentTheme } = useGamodoTheme();
@@ -652,7 +655,7 @@ function index() {
                           />
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px", color: ' #FF0000' }}>
-                              <CancelOutlinedIcon style={{height:"19px",width:"19px"}} /> <span>Not Verified</span>
+                              <CancelOutlinedIcon style={{ height: "19px", width: "19px" }} /> <span>Not Verified</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "35px" }}>
@@ -750,18 +753,7 @@ function index() {
                     </div>
                   </Grid> */}
 
-                    {/* <Grid item sm={12} xs={12}>
-                    <div className="test">
-                      <div className="primaryBtn profilebutton">
-                        <MyButton
-                          onClick={handleSubmit(onSubmit)}
-                          disabled={status == "loading" && true}
-                        >
-                          {status == "idle" ? "Update profile" : "Loading..."}
-                        </MyButton>
-                      </div>
-                    </div>
-                  </Grid> */}
+
 
                     <Grid item sm={12} xs={12}>
                       <div className={styles.formGroup}>
@@ -806,7 +798,7 @@ function index() {
                           />
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px", color: '#0EB11E' }}>
-                              <CheckCircleOutlineOutlinedIcon style={{height:"19px",width:"19px"}} /> <span>Verified</span>
+                              <CheckCircleOutlineOutlinedIcon style={{ height: "19px", width: "19px" }} /> <span>Verified</span>
                             </div>
 
                             <div style={{ display: "flex" }}>
@@ -822,8 +814,21 @@ function index() {
                               marginBottom: "5px",
                             }}
                           >
-                            {errors?.email_address?.message}
+                            {errors?.phone_no?.message}
                           </div>
+                        </div>
+                      </div>
+                    </Grid>
+
+                    <Grid item sm={12} xs={12}>
+                      <div className="test">
+                        <div className="primaryBtn profilebutton">
+                          <MyButton
+                            onClick={handleSubmit(onSubmit)}
+                            disabled={status == "loading" && true}
+                          >
+                            {status == "idle" ? "Update profile" : "Loading..."}
+                          </MyButton>
                         </div>
                       </div>
                     </Grid>
