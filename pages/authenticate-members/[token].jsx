@@ -125,6 +125,9 @@ export default function index() {
               // console.log(res?.payload.result?.data?.autoenroll_max_retry_limit)
               if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
                 localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit) + 1)
+              } else {
+                localStorage.setItem("verificationMaxLimit", 4)
+
               }
               updateStatus('rejected', 5)
               updateStatus('rejected', 6)
@@ -143,7 +146,7 @@ export default function index() {
       } else {
         let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
         let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
-        if (c === enrollMaxLimit) {
+        if (Number(c) === Number(enrollMaxLimit)) {
           updateStatus('rejected', 5)
           updateStatus('rejected', 6)
         }
