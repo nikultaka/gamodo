@@ -20,6 +20,8 @@ import dynamic from "next/dynamic";
 import AuthenticatePopup from "@/components/Popups/AuthenticatePopup";
 import { Cookies } from "react-cookie";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CircularProgress from '@mui/material/CircularProgress';
+
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
 });
@@ -31,7 +33,14 @@ export default function index() {
   const { isAuthenticate, authenticateData, memberData, member_verify_status } = useSelector((state) => state?.profile);
   const { email, ip, token } = router?.query
 
+  const INTERVAL_MAX_COUNT = 6
+  const INTERVAL_RELOAD_TIME = 10000
+  // const [intervalCount, setIntervalCount] = React.useState(0);
+  let intervalCount = 0
+
+
   const [ratio, setRatio] = React.useState(0);
+
 
   const [rewardList, setRewardList] = React.useState([
     {
@@ -80,6 +89,102 @@ export default function index() {
   const lst = useMemo(() => rewardList, [rewardList]);
 
 
+  const verifyEmailAndIp = async() => {
+
+    let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+    let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
+    let response = {};
+
+    response.token = null;
+    response.status = intervalCount < INTERVAL_MAX_COUNT ? 'email-ip-pending' : 'rejected';
+
+    if (rewardList.filter((e) => e.status === 'pending').length > 0 && Number(count) !== Number(enrollMaxLimit)) {
+
+
+      let payload = {
+        source: "external",
+        email: email,
+        ip_address: ip,
+        token: token,
+      }
+
+      if (email && ip && token) {
+        await dispatch(verify_member(payload)).then((res) => {
+          if (res?.payload?.status?.error_code == 0) {
+
+            res.token = res?.payload?.result?.data?.token;
+            res.status = 'verified';
+
+
+            cookie.set("external-token", res?.payload?.result?.data?.token, {
+              path: "/",
+              maxAge: 86400, // Expires after 1 day
+              sameSite: true,
+            });
+
+            cookie.set("token", res?.payload?.result?.data?.token, {
+              path: "/",
+              maxAge: 86400, // Expires after 1 day
+              sameSite: true,
+            });
+
+            // updateStatus('verified', 5)
+            // updateStatus('verified', 6)
+            // localStorage.setItem("verificationCount", 0)
+            // localStorage.setItem("accountVerification", true)
+            // router.push("/home")
+          } else {
+            // let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+            // localStorage.setItem("verificationCount", Number(c) + 1);
+            if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
+              localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit) + 1)
+            } else {
+              localStorage.setItem("verificationMaxLimit", 4)
+            }
+            // console.log('err')
+
+
+            // updateStatus('rejected', 5)
+            // updateStatus('rejected', 6)
+
+            response.token = null;
+            response.status = intervalCount < INTERVAL_MAX_COUNT ? 'email-ip-pending' : 'rejected';
+
+            // console.log('res',response)
+
+
+          }
+        });
+      } else {
+
+        // updateStatus('rejected', 5)
+        // updateStatus('rejected', 6)
+
+        response.token = null;
+        response.status = intervalCount < INTERVAL_MAX_COUNT ? 'email-ip-pending' : 'rejected';
+
+      }
+    } else {
+      let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+      let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
+      if (Number(c) === Number(enrollMaxLimit)) {
+        // updateStatus('rejected', 5)
+        // updateStatus('rejected', 6)
+
+        res.token = null;
+        res.status = intervalCount < INTERVAL_MAX_COUNT ? 'email-ip-pending' : 'rejected';
+      }
+
+    }
+    // console.log('return')
+
+    intervalCount++
+    return response;
+
+
+  }
+
+
 
   useEffect(() => {
     localStorage.setItem("isExternalUser", true)
@@ -91,82 +196,96 @@ export default function index() {
     let interval;
     if (rewardList.filter((e) => e.status === 'verified').length < 5) {
       interval = setInterval(() => updateStatus('verified'), 1000);
-      // return () => {
-      //   clearInterval(interval);
-      // };
+
     } else {
-      let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-      let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
+
+      // var refreshId = setInterval(async function () {
+      //   console.log('bef',intervalCount)
+      //   if (intervalCount < INTERVAL_MAX_COUNT) {
+      //     var properID = await verifyEmailAndIp();
+      //     // if (properID.status == 'verified') {
+
+      //     // } else {
+      //     //   console.log(properID.status)
+      //       updateStatus(properID.status, 5)
+      //       updateStatus(properID.status, 6)
+      //     // }
+      //     console.log(intervalCount)
+      //     console.log(properID)
+
+      //   }else{
+      //     console.log('else')
+      //   }
+
+      //   // if (properID > 0) {
+      //   //   clearInterval(refreshId);
+      //   // }
+      // }, INTERVAL_RELOAD_TIME);
+
+      // let count = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+      // let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
 
 
-      if (rewardList.filter((e) => e.status === 'pending').length > 0 && Number(count) !== Number(enrollMaxLimit)) {
+      // if (rewardList.filter((e) => e.status === 'pending').length > 0 && Number(count) !== Number(enrollMaxLimit)) {
 
-        clearInterval(interval);
+      //   clearInterval(interval);
 
-        let payload = {
-          source: "external",
-          email: email,
-          ip_address: ip,
-          token: token,
-        }
+      //   let payload = {
+      //     source: "external",
+      //     email: email,
+      //     ip_address: ip,
+      //     token: token,
+      //   }
 
-        if (email && ip && token) {
-          dispatch(verify_member(payload)).then((res) => {
-            if (res?.payload?.status?.error_code == 0) {
-              // console.log(res?.payload.result.data)
-              cookie.set("external-token", res?.payload?.result?.data?.token, {
-                path: "/",
-                maxAge: 86400, // Expires after 1 day
-                sameSite: true,
-              });
+      //   if (email && ip && token) {
+      //     dispatch(verify_member(payload)).then((res) => {
+      //       if (res?.payload?.status?.error_code == 0) {
 
-              cookie.set("token", res?.payload?.result?.data?.token, {
-                path: "/",
-                maxAge: 86400, // Expires after 1 day
-                sameSite: true,
-              });
+      //         cookie.set("external-token", res?.payload?.result?.data?.token, {
+      //           path: "/",
+      //           maxAge: 86400, // Expires after 1 day
+      //           sameSite: true,
+      //         });
 
-              updateStatus('verified', 5)
-              updateStatus('verified', 6)
-              localStorage.setItem("verificationCount", 0)
-              localStorage.setItem("accountVerification", true)
-              router.push("/home")
+      //         cookie.set("token", res?.payload?.result?.data?.token, {
+      //           path: "/",
+      //           maxAge: 86400, // Expires after 1 day
+      //           sameSite: true,
+      //         });
 
-            } else {
-              let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-              localStorage.setItem("verificationCount", Number(c) + 1);
-              // console.log(res?.payload.result?.data?.autoenroll_max_retry_limit)
-              if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
-                localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit) + 1)
-              } else {
-                localStorage.setItem("verificationMaxLimit", 4)
+      //         updateStatus('verified', 5)
+      //         updateStatus('verified', 6)
+      //         localStorage.setItem("verificationCount", 0)
+      //         localStorage.setItem("accountVerification", true)
+      //         router.push("/home")
+      //       } else {
+      //         let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+      //         localStorage.setItem("verificationCount", Number(c) + 1);
+      //         if (res?.payload.result?.data?.autoenroll_max_retry_limit) {
+      //           localStorage.setItem("verificationMaxLimit", Number(res?.payload.result?.data?.autoenroll_max_retry_limit) + 1)
+      //         } else {
+      //           localStorage.setItem("verificationMaxLimit", 4)
+      //         }
+      //         updateStatus('rejected', 5)
+      //         updateStatus('rejected', 6)
 
-              }
-              updateStatus('rejected', 5)
-              updateStatus('rejected', 6)
+      //       }
+      //     });
+      //   } else {
 
+      //     updateStatus('rejected', 5)
+      //     updateStatus('rejected', 6)
 
-            }
-          });
-        } else {
+      //   }
+      // } else {
+      //   let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
+      //   let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
+      //   if (Number(c) === Number(enrollMaxLimit)) {
+      //     updateStatus('rejected', 5)
+      //     updateStatus('rejected', 6)
+      //   }
 
-          console.log('e2')
-
-          updateStatus('rejected', 5)
-          updateStatus('rejected', 6)
-
-        }
-      } else {
-        let c = localStorage.getItem("verificationCount") ? localStorage.getItem("verificationCount") : 0;
-        let enrollMaxLimit = localStorage.getItem("verificationMaxLimit") ? localStorage.getItem("verificationMaxLimit") : 4;
-        if (Number(c) === Number(enrollMaxLimit)) {
-          updateStatus('rejected', 5)
-          updateStatus('rejected', 6)
-        }
-        // console.log('e3')
-        // updateStatus('rejected', 5)
-        // updateStatus('rejected', 6)
-      }
+      // }
 
 
     }
@@ -209,14 +328,28 @@ export default function index() {
                 />
               </>
               :
-              <CheckCircleIcon
-                style={{
-                  width: 20,
-                  height: 20,
-                  color: "green",
-                  visibility: list.status === 'pending' ? "hidden" : "visible"
-                }}
-              />
+              list.status === 'email-ip-pending' ?
+
+                <CircularProgress
+                  style={{
+                    width: 20,
+                    height: 20,
+                    // color: "red",
+                    // visibility: list.status === 'pending' ? "hidden" : "visible"
+                  }}
+
+                />
+                :
+
+                <CheckCircleIcon
+                  style={{
+                    width: 20,
+                    height: 20,
+                    color: "green",
+                    visibility: list.status === 'pending' ? "hidden" : "visible"
+                  }}
+                />
+
 
           }
         </div>
