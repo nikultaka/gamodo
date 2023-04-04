@@ -331,12 +331,12 @@ loading="lazy"
           <ul>
             <li
               className={`${
-                checkIfRouterIsActive("profile") || checkIfRouterIsActive("")
+                checkIfRouterIsActive("user-profile") || checkIfRouterIsActive("")
                   ? "active"
                   : ""
               }`}
             >
-              <Link href="/profile" onClick={handleCloseDrawerMenu}>
+              <Link href="/user-profile" onClick={handleCloseDrawerMenu}>
                 <figure className="only-stroke">
                   <UserIcon />
                 </figure>
