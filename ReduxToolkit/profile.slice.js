@@ -14,6 +14,7 @@ const initialState = {
   isLoggedIn: false,
   isAuthenticate: true,
   authenticateData: null,
+  intervalCount: 0,
   memberData: null,
   member_verify_status: "idle",
   member_email_verify_status: "idle",
@@ -477,6 +478,9 @@ const profileSlice = createSlice({
     },
     setAuthenticateData: (state, action) => {
       state.authenticateData = action?.payload;
+    },
+    setIntervalCount: (state, action) => {
+      state.intervalCount = action?.payload;
     },
   },
   extraReducers: (builder) => {
@@ -1013,25 +1017,25 @@ const profileSlice = createSlice({
       })
 
 
-    //---
+      //---
 
-    .addCase(changeActivationEmail.pending, (state, action) => {
-      state.status = "loading";
-      state.member_email_change_status = "loading";
-    })
-    .addCase(changeActivationEmail.fulfilled, (state, action) => {
-      state.status = "idle";
-      if (action?.payload?.status?.error_code == 0) {
+      .addCase(changeActivationEmail.pending, (state, action) => {
+        state.status = "loading";
+        state.member_email_change_status = "loading";
+      })
+      .addCase(changeActivationEmail.fulfilled, (state, action) => {
+        state.status = "idle";
+        if (action?.payload?.status?.error_code == 0) {
+          state.member_email_change_status = "idle";
+          // state.memberData = action?.payload?.result?.data;
+        } else {
+          state.member_email_change_status = "idle";
+        }
+      })
+      .addCase(changeActivationEmail.rejected, (state, action) => {
+        state.status = "idle";
         state.member_email_change_status = "idle";
-        // state.memberData = action?.payload?.result?.data;
-      } else {
-        state.member_email_change_status = "idle";
-      }
-    })
-    .addCase(changeActivationEmail.rejected, (state, action) => {
-      state.status = "idle";
-      state.member_email_change_status = "idle";
-    });
+      });
 
 
 
@@ -1051,6 +1055,7 @@ export const {
   setUserProfile,
   setIsAuthenticate,
   setAuthenticateData,
+  setIntervalCount,
   clear_login_status,
   clear_recently_played_status,
   clear_save_fav_status,

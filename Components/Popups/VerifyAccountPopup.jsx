@@ -42,9 +42,9 @@ const VerifyAccountPopup = ({ memberData, onClickResend, open, setOpen , onClick
     const classes = useStyles();
 
     useEffect(() => {
-        if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
-            setOpen(true)
-        }
+        // if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
+        //     setOpen(true)
+        // }
 
     }, [memberData])
 
