@@ -691,22 +691,22 @@ export default function Home() {
       {
         // console.log('memberData', memberData?.token)
       }
-      <VerifyAccountPopup
+      {/* <VerifyAccountPopup
         memberData={memberData}
         onClickResend={onClickResend}
         open={open}
         setOpen={setOpen}
         onClickChange={onClickChange}
-      />
+      /> */}
 
-      <ChangeEmailPopup
+      {/* <ChangeEmailPopup
         open={openChangeEmailPopup}
         setOpen={setOpenChangeEmailPopup}
         email={email}
         handleChange={handleChange}
         validateEmail={validateEmail}
         onClickChangeEmail={onClickChangeEmail}
-      />
+      /> */}
 
       <div className="pagebody">
         <div className="couponSlider">

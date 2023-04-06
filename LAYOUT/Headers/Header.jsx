@@ -21,7 +21,8 @@ import MyButton from "@/ui/Buttons/MyButton/MyButton";
 import WarningIcon from '@mui/icons-material/Warning';
 // import Button from '@mui/material/Button';
 import useNotiStack from "@/hooks/useNotistack";
-import { resendActivationEmail } from "@/reduxtoolkit/profile.slice";
+import { resendActivationEmail, changeActivationEmail } from "@/reduxtoolkit/profile.slice";
+import ChangeEmailPopup from "@/components/Popups/ChangeEmailPopup";
 
 const StyledSearchContainer = styled(Box)`
   display: flex;
@@ -84,6 +85,10 @@ const Header = ({ title, subtext, hideProfile }) => {
   const { toastSuccess, toastError } = useNotiStack();
   const [open, setOpen] = useState(false)
   const [openSearchBox, setOpenSearchBox] = useState(false);
+
+  const [openChangeEmailPopup, setOpenChangeEmailPopup] = useState(false)
+  const [email, setEmail] = useState('')
+
   const handleOpenDrawerMenu = useCallback(() => {
     dispatch(openDrawerMenu(true));
   }, []);
@@ -173,76 +178,132 @@ const Header = ({ title, subtext, hideProfile }) => {
     }
   }, [memberData])
 
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  const handleChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const onClickChange = () => {
+    setEmail('')
+    setOpenChangeEmailPopup(true)
+  }
+
+
+  const onClickChangeEmail = () => {
+    let payload = {}
+    payload.data = {}
+    payload.data.email = email
+    payload.data.source = "external"
+    payload.token = memberData?.token
+
+    dispatch(changeActivationEmail(payload)).then((res) => {
+      if (res?.payload?.status?.error_code == 0) {
+        toastSuccess(res?.payload?.status?.message);
+        setOpenChangeEmailPopup(false)
+        setOpen(false)
+        setEmail('')
+        localStorage.removeItem('accountVerification');
+
+
+      } else {
+        toastError(res?.payload?.status?.message);
+        // setOpen(false)
+      }
+    });
+
+  }
+
+
   return (
-    <Slide in={slideIn} direction={"down"}>
+    <>
 
-      <Box className={styles.headerWrapper} ref={headerRef}>
-        {
-          open
-            ?
-            <div style={{ background: "#ffff", padding: "2%", border: "2px solid" }}>
-              <h4>
-                <div style={{ display: "flex", gap: "5px" }}>
-                  <WarningIcon style={{ color: "red" }} />&nbsp;<span>{"Please check your email to verify your account."}</span></div>
-              </h4>
-              <div style={{ textAlign: "center", padding: "unset" }}>
-                <h4>{memberData?.email}</h4>
-              </div>
-              <div style={{ justifyContent: "space-between", display: "flex" }}>
-                <Button onClick={search_func}>Change</Button>
-                <Button onClick={onClickResend} >
-                  Resend
-                </Button>
-              </div>
-            </div>
-            :
-            <div className={styles.homeHeader}>
-              <div className={styles.homeHeaderLeft}>
-                <h1>{title || "Home"}</h1>
-                <p className={styles.hearderSubHeading}>
-                  {profileData?.first_name !== undefined &&
-                    `Welcome Back ${profileData?.first_name !== undefined
-                      ? profileData?.first_name
-                      : ""
-                    }`}
-                </p>
-              </div>
-              <div className={styles.homeHeaderRight}>
-                <StyledSearchContainer
-                  className={!openSearchBox ? "hideSearchInput" : "showSearchInput"}
-                >
-                  <InputBase
-                    style={{ paddingLeft: "10px" }}
-                    placeholder="Search..."
-                    inputRef={searchInputRef}
-                    value={searchValue}
-                    onChange={({ target: { value } }) => setSearchValue(value)}
-                  />
-                  <MyButton onClick={searchBoxOpen}>
-                    <SearchIcon style={{ paddingLeft: "0px" }} />
-                  </MyButton>
+      <Slide in={slideIn} direction={"down"}>
 
-                  <Button className="closeSearch" onClick={closeSearchBox}>
-                    <CancelIcon />
+
+
+        <Box className={styles.headerWrapper} ref={headerRef}>
+          <ChangeEmailPopup
+            open={openChangeEmailPopup}
+            setOpen={setOpenChangeEmailPopup}
+            email={email}
+            handleChange={handleChange}
+            validateEmail={validateEmail}
+            onClickChangeEmail={onClickChangeEmail}
+          />
+          {
+            open
+              ?
+              <div style={{ background: "#ffff", padding: "2%", border: "2px solid" }}>
+                <h4>
+                  <div style={{ display: "flex", gap: "5px" }}>
+                    <WarningIcon style={{ color: "red" }} />&nbsp;<span>{"Please check your email to verify your account."}</span></div>
+                </h4>
+                <div style={{ textAlign: "center", padding: "unset" }}>
+                  <h4>{memberData?.email}</h4>
+                </div>
+                <div style={{ justifyContent: "space-between", display: "flex" }}>
+                  <Button onClick={onClickChange}>Change</Button>
+                  <Button onClick={onClickResend} >
+                    Resend
                   </Button>
-                </StyledSearchContainer>
-                {!hideProfile && (
-                  <Avatar
-                    onClick={handleOpenDrawerMenu}
-                    alt="Remy Sharp"
-                    src={assest?.pf01}
-                    sx={{ width: 50, height: 50 }}
-                  />
-                )}
+                </div>
               </div>
-            </div>
+              :
+              <div className={styles.homeHeader}>
+                <div className={styles.homeHeaderLeft}>
+                  <h1>{title || "Home"}</h1>
+                  <p className={styles.hearderSubHeading}>
+                    {profileData?.first_name !== undefined &&
+                      `Welcome Back ${profileData?.first_name !== undefined
+                        ? profileData?.first_name
+                        : ""
+                      }`}
+                  </p>
+                </div>
+                <div className={styles.homeHeaderRight}>
+                  <StyledSearchContainer
+                    className={!openSearchBox ? "hideSearchInput" : "showSearchInput"}
+                  >
+                    <InputBase
+                      style={{ paddingLeft: "10px" }}
+                      placeholder="Search..."
+                      inputRef={searchInputRef}
+                      value={searchValue}
+                      onChange={({ target: { value } }) => setSearchValue(value)}
+                    />
+                    <MyButton onClick={searchBoxOpen}>
+                      <SearchIcon style={{ paddingLeft: "0px" }} />
+                    </MyButton>
 
-        }
+                    <Button className="closeSearch" onClick={closeSearchBox}>
+                      <CancelIcon />
+                    </Button>
+                  </StyledSearchContainer>
+                  {!hideProfile && (
+                    <Avatar
+                      onClick={handleOpenDrawerMenu}
+                      alt="Remy Sharp"
+                      src={assest?.pf01}
+                      sx={{ width: 50, height: 50 }}
+                    />
+                  )}
+                </div>
+              </div>
+
+          }
 
 
 
-      </Box>
-    </Slide>
+        </Box>
+      </Slide>
+    </>
   );
 };
 export default Header;
