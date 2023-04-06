@@ -39,7 +39,7 @@ export default function index() {
   const { email, ip, token } = router?.query;
 
   const INTERVAL_MAX_COUNT = 6
-  const INTERVAL_RELOAD_TIME = 5000
+  const INTERVAL_RELOAD_TIME = 10000
   // const [intervalCount, setIntervalCount] = React.useState(0);
   let intervalCount = 0
 
