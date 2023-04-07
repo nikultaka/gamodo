@@ -357,7 +357,9 @@ function index() {
                   height={100}
                   width={100}
                   style={{
-                    objectFit: "contain"
+                    objectFit: "contain",
+                    width: '127px',
+                    height: '77px',
                   }}
                 />
                 {/* </Badge> */}
@@ -625,7 +627,7 @@ function index() {
                     </div>
                   </Grid> */}
 
-                    <Grid item sm={12} xs={12}>
+                    <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "17px" }}>
                       <div className={styles.formGroup}>
                         <div style={{ border: "1px solid rgba(24, 119, 242, 0.2)", borderRadius: "10px", padding: "10px" }} >
 
@@ -653,7 +655,7 @@ function index() {
                             }
                             {...register("email_address")}
                           />
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px", color: ' #FF0000' }}>
                               <CancelOutlinedIcon style={{ height: "19px", width: "19px" }} /> <span>Not Verified</span>
                             </div>
@@ -664,15 +666,18 @@ function index() {
 
                             </div>
                           </div>
-                          <div
-                            style={{
-                              color: "red",
-                              marginTop: "5px",
-                              marginBottom: "5px",
-                            }}
-                          >
-                            {errors?.email_address?.message}
-                          </div>
+                          {
+                            errors?.email_address?.message &&
+                            <div
+                              style={{
+                                color: "red",
+                                marginTop: "5px",
+                                marginBottom: "5px",
+                              }}
+                            >
+                              {errors?.email_address?.message}
+                            </div>
+                          }
                         </div>
                       </div>
                     </Grid>
@@ -755,7 +760,7 @@ function index() {
 
 
 
-                    <Grid item sm={12} xs={12}>
+                    <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "18px" }}>
                       <div className={styles.formGroup}>
                         <div style={{ border: "1px solid rgba(24, 119, 242, 0.2)", borderRadius: "10px", padding: "10px" }} >
 
@@ -796,7 +801,7 @@ function index() {
                               },
                             })}
                           />
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px", color: '#0EB11E' }}>
                               <CheckCircleOutlineOutlinedIcon style={{ height: "19px", width: "19px" }} /> <span>Verified</span>
                             </div>
@@ -807,15 +812,19 @@ function index() {
 
                             </div>
                           </div>
-                          <div
-                            style={{
-                              color: "red",
-                              marginTop: "5px",
-                              marginBottom: "5px",
-                            }}
-                          >
-                            {errors?.phone_no?.message}
-                          </div>
+                          {
+                            errors?.phone_no?.message &&
+
+                            <div
+                              style={{
+                                color: "red",
+                                marginTop: "5px",
+                                marginBottom: "5px",
+                              }}
+                            >
+                              {errors?.phone_no?.message}
+                            </div>
+                          }
                         </div>
                       </div>
                     </Grid>
@@ -833,8 +842,8 @@ function index() {
                       </div>
                     </Grid>
 
-                    <Grid item sm={12} xs={12}>
-                      <div className={styles.settings}>
+                    <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "17px" }}>
+                      <div className={styles.settings} style={{ paddingTop: "unset" }}>
                         <label>Settings</label>
                         <div
                           style={{
