@@ -11,6 +11,7 @@ import GetProductDataList, {
   GetCatGameData,
   GetAllCatGames,
   GetBlogsFullDataList,
+  GetCategoryWiseContent
 } from "@/api/functions/GetProductDataList";
 import { Cookies } from "react-cookie";
 import styles from "@/styles/pages/home.module.scss";
@@ -51,6 +52,7 @@ import VerifyAccountPopup from "@/components/Popups/VerifyAccountPopup";
 import { resendActivationEmail, changeActivationEmail } from "@/reduxtoolkit/profile.slice";
 // import ChangeEmailPop from "./ChangeEmailPop";
 import ChangeEmailPopup from "@/components/Popups/ChangeEmailPopup";
+import CategoryContentCard from "@/components/ProductCard/CategoryContentCard";
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -243,6 +245,27 @@ export default function Home() {
       refetchOnWindowFocus: false,
     }
   );
+
+  const {
+    data: categoryWiseContent,
+    // refetch,
+    // remove,
+    isLoading: categoryWiseContentLoading,
+  } = useQuery(
+    "categoryWiseContent",
+    async () => {
+      return GetCategoryWiseContent({
+        source: "external",
+        token: token,
+      });
+    },
+    {
+      enabled: Boolean(token),
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  console.log('categoryWiseContent', categoryWiseContent)
 
   var settings = {
     dots: false,
@@ -686,6 +709,8 @@ export default function Home() {
 
   }
 
+
+
   return (
     <Wrapper>
       {
@@ -1021,6 +1046,46 @@ export default function Home() {
             </div>
           </div>
         </Fade>
+
+
+
+        {
+          categoryWiseContent && categoryWiseContent.length &&
+          categoryWiseContent.map((val, i) => {
+            return (
+              <Fade
+                in={categoryWiseContentLoading || (val?.groupData && val?.groupData?.length > 0)}
+                unmountOnExit
+                mountOnEnter
+              >
+                <div className="couponSlider" key={i}>
+                  <div className="secHeading">
+                    <h3>{val?.groupName}</h3>
+                    <Link href="/allBlogs">View more</Link>
+                  </div>
+                  <div className="itemsCarousel">
+                    {!categoryWiseContentLoading ? (
+                      <Slider {...blogs}>
+                        {val?.groupData?.map((item, key) => (
+                          <CategoryContentCard item={item} key={key} />
+                        ))}
+                      </Slider>
+                    ) : (
+                      <Grid
+                        container
+                        rowSpacing={1}
+                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                      >
+                        <Skeleton_home_blogs />
+                      </Grid>
+                    )}
+                  </div>
+                </div>
+              </Fade>
+            )
+          })
+
+        }
 
         {/* <Fade
           in={ebookCards && ebookCards?.length > 0}

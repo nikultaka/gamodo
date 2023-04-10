@@ -260,4 +260,50 @@ export const blogsDetails = async (data, token) => {
   return _res;
 };
 
+export const GetCategoryWiseContent = async (data, token) => {
+  const _res = authAxiosInstance
+    .post(
+      api_end_points.getCategoryWiseContent,
+      {
+        source: data?.source,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${data?.token}`,
+        },
+      }
+    )
+    .then((response) => {
+      if (response.status.error_code === 1) {
+        return [];
+      }
+      return response?.result?.data;
+    })
+    .catch(() => {
+      return [];
+    });
+
+  return _res;
+};
+
+export const contentDetails = async (data, token) => {
+  const _res = authAxiosInstance
+    .post(
+      api_end_points.contentDetails,
+      {
+        source: data?.source,
+        slug: data?.slug,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${data?.token}`,
+        },
+      }
+    )
+    .then((response) => response)
+    .catch((error) => error);
+
+  return _res;
+};
+
 export default GetProductDataList;

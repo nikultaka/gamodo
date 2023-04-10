@@ -59,8 +59,10 @@ export const api_end_points = {
   dashboardData: "/getDashboardData",
   getMyFavourite: "/getMyFavourite",
   gameData: "getCategoryWiseGames",
+  getCategoryWiseContent: "getCategoryWiseContent",
   catGameData: "getGameList",
   gameDetails: "getGameDetails",
+  contentDetails: "getContentDetails",
   saveToRecentlyPlayed: "saveToRecentlyPlayed",
 };
 
