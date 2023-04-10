@@ -734,6 +734,43 @@ export default function Home() {
       /> */}
 
       <div className="pagebody">
+      {
+          categoryWiseContent && categoryWiseContent.length &&
+          categoryWiseContent.map((val, i) => {
+            return (
+              <Fade
+                in={categoryWiseContentLoading || (val?.groupData && val?.groupData?.length > 0)}
+                unmountOnExit
+                mountOnEnter
+              >
+                <div className="couponSlider" key={i}>
+                  <div className="secHeading">
+                    <h3>{val?.groupName}</h3>
+                    <Link href="/allBlogs">View more</Link>
+                  </div>
+                  <div className="itemsCarousel">
+                    {!categoryWiseContentLoading ? (
+                      <Slider {...blogs}>
+                        {val?.groupData?.map((item, key) => (
+                          <CategoryContentCard item={item} key={key} />
+                        ))}
+                      </Slider>
+                    ) : (
+                      <Grid
+                        container
+                        rowSpacing={1}
+                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                      >
+                        <Skeleton_home_blogs />
+                      </Grid>
+                    )}
+                  </div>
+                </div>
+              </Fade>
+            )
+          })
+
+        }
         <div className="couponSlider">
           <div className="secHeading">
             <h3>Today’s Coupon</h3>
@@ -1049,43 +1086,7 @@ export default function Home() {
 
 
 
-        {
-          categoryWiseContent && categoryWiseContent.length &&
-          categoryWiseContent.map((val, i) => {
-            return (
-              <Fade
-                in={categoryWiseContentLoading || (val?.groupData && val?.groupData?.length > 0)}
-                unmountOnExit
-                mountOnEnter
-              >
-                <div className="couponSlider" key={i}>
-                  <div className="secHeading">
-                    <h3>{val?.groupName}</h3>
-                    <Link href="/allBlogs">View more</Link>
-                  </div>
-                  <div className="itemsCarousel">
-                    {!categoryWiseContentLoading ? (
-                      <Slider {...blogs}>
-                        {val?.groupData?.map((item, key) => (
-                          <CategoryContentCard item={item} key={key} />
-                        ))}
-                      </Slider>
-                    ) : (
-                      <Grid
-                        container
-                        rowSpacing={1}
-                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                      >
-                        <Skeleton_home_blogs />
-                      </Grid>
-                    )}
-                  </div>
-                </div>
-              </Fade>
-            )
-          })
-
-        }
+      
 
         {/* <Fade
           in={ebookCards && ebookCards?.length > 0}
