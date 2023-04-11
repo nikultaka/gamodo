@@ -38,6 +38,7 @@ import {
   Skeleton_blogDetails_image,
   Skeleton_home_blogs,
   Skeleton_text,
+  Skeleton_category_content_image
 } from "@/components/Skeleton/Skeleton";
 import GameDisplay from "@/components/GameDisplay";
 import { getHostName } from "@/lib/functions/_common.lib";
@@ -95,12 +96,12 @@ function index({ isUserAgentMobile }) {
   const [isPlayed, setIsPlayed] = useState(false);
   const [hideNavbar, sethideNavbar] = useState(false);
 
-  var settings = {
+  var blogs = {
     dots: false,
     arrows: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2.2,
+    slidesToShow: 1.3,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
@@ -116,7 +117,7 @@ function index({ isUserAgentMobile }) {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 1,
         },
@@ -125,14 +126,13 @@ function index({ isUserAgentMobile }) {
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 2.2,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
           initialSlide: 1,
         },
       },
     ],
   };
-
   const gameDetailsData = {}
 
   const {
@@ -220,6 +220,10 @@ function index({ isUserAgentMobile }) {
   );
   const date_diff = required_date.diff(curr_date, "days");
   const headerRef = useRef(null);
+
+  const redirectUrl = (url) => {
+
+  }
 
   return (
     <div className={styles.page_product_details}>
@@ -313,29 +317,24 @@ function index({ isUserAgentMobile }) {
               //   }
               // </>
             ) : (
-              <Skeleton_blogDetails_image />
+              <Skeleton_category_content_image />
             )}
 
             {/* <div className={styles.itemsDiscount}>
           <p>Save upto $100</p>
         </div> */}
-            <div className={styles.couponBtn}>
-              <button
-                onClick={() => {
-                  if (
-                    isUserAgentMobile &&
-                    gameDetailsData?.result?.data?.game_details?.game_url &&
-                    gameDetailsData?.result?.data?.game_details
-                      ?.available_date == undefined
-                  ) {
-                    recentlyPlayedFunc(), setIsPlayed(true);
-                  }
-                }}
+            <div className={styles.couponBtn} style={{ paddingTop: "24px" }}>
+              <a
+                href={categoryWiseContentDetails?.result?.data?.content_details
+                  ?.post_external_url
+                }
+                target="_blank"
+
               >
                 <p style={{ padding: "15px" }} className={styles.canplay}>
                   Claim Now
                 </p>
-              </button>
+              </a>
             </div>
           </div>
           <div className={styles.product_description}>
@@ -354,7 +353,19 @@ function index({ isUserAgentMobile }) {
                     },
                   }}
                 >
-                  {categoryWiseContentDetails?.length > 1 ? (
+
+                  <p>
+                    <b style={{
+                      fontWeight: '400',
+                      fontSize: '14px'
+                    }}>
+                      {
+                        categoryWiseContentDetails?.result?.data?.content_details
+                          ?.category_name
+                      }
+                    </b>
+                  </p>
+                  {/* {categoryWiseContentDetails?.length > 1 ? (
                     categoryWiseContentDetails?.map((item, index) => (
                       <>
                         <p>
@@ -393,12 +404,12 @@ function index({ isUserAgentMobile }) {
                         }
                       </b>
                     </p>
-                  )}
+                  )} */}
                 </Box>
 
                 <h4>
                   {categoryWiseContentDetails?.result?.data?.content_details?.post_title
-}
+                  }
                 </h4>
               </div>
               <div className={styles.wishlistright}>
@@ -411,7 +422,7 @@ function index({ isUserAgentMobile }) {
               </div>
             </div>
             {/* <span>Expire on: 10/31/2022</span> */}
-            <h5>Description</h5>
+            <h5 style={{ marginTop: "34px" }}>Description</h5>
             {!isLoading ? (
               <p
                 dangerouslySetInnerHTML={{
@@ -425,13 +436,14 @@ function index({ isUserAgentMobile }) {
             )}
           </div>
           <div className="couponSlider">
-            <div className="secHeading">
+            <div className="secHeading" style={{marginTop:"42px"}}>
               {categoryWiseContentDetails?.result?.data?.similar_contents?.length > 0 && (
-                <h3>Similar Contents</h3>
+                <h3>Releted {categoryWiseContentDetails?.result?.data?.content_details
+                  ?.category_name}</h3>
               )}
             </div>
             <div className="itemsCarousel">
-              <Slider {...settings}>
+              <Slider {...blogs}>
                 {categoryWiseContentDetails?.result?.data?.similar_contents?.map((item) => (
                   <CategoryContentCard
                     item={item}
@@ -443,8 +455,8 @@ function index({ isUserAgentMobile }) {
             </div>
           </div>
         </div>
-      </Fade>
-      <Fade
+      </Fade >
+      {/* <Fade
         in={isPlayed && gameDetailsData?.result?.data?.game_details?.game_url}
         unmountOnExit
         mountOnEnter
@@ -457,8 +469,8 @@ function index({ isUserAgentMobile }) {
           // }
           onBack={isPlayed ? () => setIsPlayed(false) : undefined}
         />
-      </Fade>
-    </div>
+      </Fade> */}
+    </div >
   );
 }
 

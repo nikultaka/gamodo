@@ -116,6 +116,18 @@ export function Skeleton_blogDetails_image() {
   );
 }
 
+export function Skeleton_category_content_image() {
+  return (
+    <>
+      <Grid item xs={6}>
+        <Stack spacing={2} style={{ paddingLeft: "8px" }}>
+          <Skeleton variant="rounded" width={375} height={181} />
+        </Stack>
+      </Grid>
+    </>
+  );
+}
+
 export function Skeleton_text() {
   return (
     <>

@@ -17,6 +17,13 @@ function CategoryContentCard({ item }) {
       router.push(`/category-content-details/${id}`);
     }
   };
+  // console.log('iem',item)
+
+  const blog_btn_redirect = (url) => {
+    if (url) {
+      router.push(url);
+    }
+  };
 
   return (
     <Fade in={true}>
@@ -73,6 +80,8 @@ function CategoryContentCard({ item }) {
               </div>
               <div>
                 <button
+                  onClick={() => blog_btn_redirect(item
+                    ?.post_external_url)}
                   style={{
                     background: 'rgba(24, 119, 242, 0.2)',
                     borderRadius: "10px",
