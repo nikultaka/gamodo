@@ -80,8 +80,8 @@ function CategoryContentCard({ item }) {
               </div>
               <div>
                 <button
-                  onClick={() => blog_btn_redirect(item
-                    ?.post_external_url)}
+                  // onClick={() => blog_btn_redirect(item
+                  //   ?.post_external_url)}
                   style={{
                     background: 'rgba(24, 119, 242, 0.2)',
                     borderRadius: "10px",

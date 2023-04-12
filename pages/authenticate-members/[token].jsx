@@ -21,6 +21,7 @@ import AuthenticatePopup from "@/components/Popups/AuthenticatePopup";
 import { Cookies } from "react-cookie";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CircularProgress from '@mui/material/CircularProgress';
+import Image from "next/image";
 
 const Wrapper = dynamic(() => import("@/layout/Wrappers/Wrapper"), {
   ssr: false,
@@ -285,7 +286,7 @@ export default function index() {
 
               localStorage.setItem("verificationCount", 0)
               localStorage.setItem("accountVerification", true)
-              router.push("/home")
+              // router.push("/home")
 
             } else {
               // console.log(verifyData.status)
@@ -412,7 +413,7 @@ export default function index() {
     var completedCount = 0;
     var total = 0;
 
-    rewardList.forEach((task) => {
+    rewardList2.forEach((task) => {
       if (task.status == "verified") {
         completedCount++;
       }
@@ -421,10 +422,11 @@ export default function index() {
     var percentage = (completedCount / total) * 100;
     setRatio(Math.round(percentage))
 
-  }, [rewardList]);
+  }, [rewardList2]);
 
 
-  const memoList = useMemo(() => rewardList2.map(list => {
+  const memoList = useMemo(() => rewardList2.map((list,i) => {
+    
     return (
       <li class="verifying-list__item" >
         <div class="icon-circle">
@@ -453,30 +455,44 @@ export default function index() {
 
               //   />
               //   :
-             ( list.label == 'Ip address check' || list.label == 'Email address verified') &&
+              (list.label == 'Ip address check' || list.label == 'Email address verified') &&
                 rewardList.filter((e) => e.status === 'verified').length == 5 ?
 
 
-                  <CircularProgress
-                    style={{
-                      width: 20,
-                      height: 20,
-                      // color: "red",
-                      visibility: rewardList.filter((e) => e.status === 'verified').length > 4 ? "visible" : "hidden"
-                    }}
+                <CircularProgress
+                  style={{
+                    width: 20,
+                    height: 20,
+                    // color: "red",
+                    visibility: rewardList.filter((e) => e.status === 'verified').length > 4 ? "visible" : "hidden"
+                  }}
 
-                  />
+                />
 
-                  :
+                :
 
-                  <CheckCircleIcon
-                    style={{
-                      width: 20,
-                      height: 20,
-                      color: "green",
-                      visibility: list.status === 'pending' ? "hidden" : "visible"
-                    }}
-                  />
+                // <CheckCircleIcon
+                //   style={{
+                //     width: 20,
+                //     height: 20,
+                //     color: "green",
+                //     visibility: list.status === 'pending' ? "hidden" : "visible"
+                //   }}
+                // />
+                
+                <Image
+                  loading="lazy"
+                  src={assest.checkGif}
+                  alt={"rewards_"+i}
+                  id={i}
+                  height={20}
+                  width={20}
+                  style={{
+                    color: "green",
+                    objectFit: "contain",
+                    visibility: list.status === 'pending' ? "hidden" : "visible"
+                  }}
+                />
 
 
           }

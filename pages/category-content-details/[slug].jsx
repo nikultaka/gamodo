@@ -30,6 +30,7 @@ import {
   clear_recently_played_status,
   getMyFavourite,
   recently_played,
+  save_to_content_click
 } from "@/reduxtoolkit/profile.slice";
 import useNotiStack from "@/hooks/useNotistack";
 import { checkFav } from "@/api/functions/checkFavourite";
@@ -221,7 +222,30 @@ function index({ isUserAgentMobile }) {
   const date_diff = required_date.diff(curr_date, "days");
   const headerRef = useRef(null);
 
-  const redirectUrl = (url) => {
+  const onClickBtn = async () => {
+
+    let payload = {}
+    payload.source = 'external'
+    payload.slug = router?.query?.slug
+
+
+
+    await dispatch(save_to_content_click(payload)).then((res) => {
+      if (res?.payload?.status?.error_code == 0) {
+        if (Number(categoryWiseContentDetails?.result?.data?.content_details?.single_use) === 1) {
+          localStorage.setItem(router?.query?.slug, true)
+        }
+        // remove();
+        refetch();
+        window.open(categoryWiseContentDetails?.result?.data?.content_details?.post_external_url)
+        // toastSuccess(res?.payload?.status?.message);
+
+      } else {
+
+        toastError(res?.payload?.status?.message);
+
+      }
+    });
 
   }
 
@@ -324,17 +348,25 @@ function index({ isUserAgentMobile }) {
           <p>Save upto $100</p>
         </div> */}
             <div className={styles.couponBtn} style={{ paddingTop: "24px" }}>
-              <a
-                href={categoryWiseContentDetails?.result?.data?.content_details
-                  ?.post_external_url
-                }
-                target="_blank"
+              <button
+
+                style={Number(categoryWiseContentDetails?.result?.data?.content_details
+                  ?.clicked) === 1 || (typeof window !== 'undefined' && localStorage.getItem(router?.query?.slug)) ? { opacity: 0.5, cursor: "not-allowed" } : {}}
+                disabled={Number(categoryWiseContentDetails?.result?.data?.content_details
+                  ?.clicked) === 1 || (typeof window !== 'undefined' && localStorage.getItem(router?.query?.slug))}
+                  
+                onClick={() => onClickBtn()}
+              // href={categoryWiseContentDetails?.result?.data?.content_details
+              //   ?.post_external_url
+              // }
+              // target="_blank"
 
               >
                 <p style={{ padding: "15px" }} className={styles.canplay}>
-                  Claim Now
+                  {categoryWiseContentDetails?.result?.data?.content_details
+                    ?.button_name}
                 </p>
-              </a>
+              </button>
             </div>
           </div>
           <div className={styles.product_description}>
@@ -436,7 +468,7 @@ function index({ isUserAgentMobile }) {
             )}
           </div>
           <div className="couponSlider">
-            <div className="secHeading" style={{marginTop:"42px"}}>
+            <div className="secHeading" style={{ marginTop: "42px" }}>
               {categoryWiseContentDetails?.result?.data?.similar_contents?.length > 0 && (
                 <h3>Releted {categoryWiseContentDetails?.result?.data?.content_details
                   ?.category_name}</h3>

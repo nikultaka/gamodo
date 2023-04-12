@@ -22,14 +22,18 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
-    // borderRadius: 5,
+    borderRadius: 21,
+
     [`&.${linearProgressClasses.colorPrimary}`]: {
-        backgroundColor:
-            theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+        backgroundColor: 'unset'
+        // theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
     },
     [`& .${linearProgressClasses.bar}`]: {
         // borderRadius: 5,
-        backgroundColor: "black"
+        // backgroundColor: "black"
+        background: 'linear-gradient(90deg, #C350CB 8.33%, #290BF7 83.37%)',
+        mixBlendMode: 'normal',
+        borderRadius: '21px'
     }
 }));
 
@@ -66,19 +70,28 @@ const AuthenticatePopup = ({ memoList, updateStatus, ratio, rewardList, onClickR
                         loading="lazy"
                         src={assest.DailyRewards}
                         alt="rewards"
-                        height={100}
-                        width={100}
+                        height={77}
+                        width={127}
                         style={{
                             objectFit: "contain"
                         }}
                     />
-                    <h5 style={{ marginBottom: "5%" }}>{"Creating your account"}</h5>
+                    <h5 style={{ marginBottom: "5%", marginTop: "5%", fontWeight: "400", fontSize: "16px" }}>{"Creating your account"}</h5>
                     <div style={{ textAlign: "end", marginBottom: "2%" }}>
                         <span>{ratio}%</span>
                     </div>
-                    <BorderLinearProgress variant="determinate" value={ratio} />
+                    <div
+                        style={{
+                            border: '1px solid lightgray',
+                            padding: '6px',
+                            borderRadius: '21px',
+                        }}
+
+                    >
+                        <BorderLinearProgress variant="determinate" value={ratio} />
+                    </div>
                     <div style={{ marginTop: "10%", paddingBottom: "0px" }}>
-                        <ul class="verifying-list" style={{ textAlign: "start" }}>
+                        <ul class="verifying-list" style={{ textAlign: "start", padding: '0px 20px' }}>
                             {
                                 memoList
                                 // lsts.map((list, i) => {
@@ -144,7 +157,7 @@ const AuthenticatePopup = ({ memoList, updateStatus, ratio, rewardList, onClickR
             <Button onClick={handleClose}>Disagree</Button>
             <Button onClick={handleClose}>Agree</Button>
           </DialogActions> */}
-            </Dialog>
+            </Dialog >
         </>
     );
 

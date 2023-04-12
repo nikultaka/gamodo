@@ -19,6 +19,7 @@ const initialState = {
   member_verify_status: "idle",
   member_email_verify_status: "idle",
   member_email_change_status: "idle",
+  save_to_content_click_status: "idle",
   status: "idle",
   game_search_data_status: "idle",
   feature_game_search_data_status: "idle",
@@ -433,6 +434,18 @@ export const changeActivationEmail = createAsyncThunk(
             Authorization: `Bearer ${data.token}`,
           },
         })
+      .then((response) => response)
+      .catch((error) => error);
+    let resData = response;
+
+    return resData;
+  }
+);
+export const save_to_content_click = createAsyncThunk(
+  "/saveToContentClick",
+  async (data) => {
+    const response = axiosInstance
+      .post("saveToContentClick", data)
       .then((response) => response)
       .catch((error) => error);
     let resData = response;
@@ -1035,12 +1048,32 @@ const profileSlice = createSlice({
       .addCase(changeActivationEmail.rejected, (state, action) => {
         state.status = "idle";
         state.member_email_change_status = "idle";
-      });
+      })
 
 
 
 
-    //---
+      //---
+
+      //
+      .addCase(save_to_content_click.pending, (state, action) => {
+        state.status = "loading";
+        state.save_to_content_click_status = "loading";
+      })
+      .addCase(save_to_content_click.fulfilled, (state, action) => {
+        state.status = "idle";
+        if (action?.payload?.status?.error_code == 0) {
+          state.save_to_content_click_status = "idle";
+        } else {
+          state.save_to_content_click_status = "idle";
+        }
+      })
+      .addCase(save_to_content_click.rejected, (state, action) => {
+        state.status = "idle";
+        state.save_to_content_click_status = "idle";
+      })
+
+    //
 
     builder.addCase(HYDRATE, (state, { payload }) => {
       return {
