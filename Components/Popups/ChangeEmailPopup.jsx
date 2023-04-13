@@ -13,6 +13,8 @@ import LinearProgress, {
     linearProgressClasses
 } from "@mui/material/LinearProgress";
 import { alpha, styled } from "@mui/material/styles";
+import styles from "@/styles/pages/profile.module.scss";
+
 import { memo } from "react";
 import Image from "next/image";
 // import { makeStyles } from "@material-ui/core/styles";
@@ -29,6 +31,19 @@ import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputBase from '@mui/material/InputBase';
+import WarningAmberOutlinedIcon from '@mui/icons-material/WarningAmberOutlined';
+import {
+    // Avatar,
+    // FormControl,
+    Input,
+    InputAdornment,
+    // InputLabel,
+    // Fade,
+} from "@mui/material";
+import IconModifier from "@/ui/IconModifier/IconModifier";
+import MailIcon from "@/ui/icons/MailIcon";
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -118,18 +133,127 @@ const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, o
                 aria-labelledby="customized-dialog-title"
                 open={open}
             >
-                <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                    Change your email
+                <BootstrapDialogTitle id="customized-dialog-title changeEmailPoupup" onClose={handleClose}>
+                    {/* Change your email */}
                 </BootstrapDialogTitle>
-                <DialogContent dividers>
-                    <Alert severity="warning">
+                <DialogContent style={{ paddingTop: "16px", paddingBottom: 'unset' }} >
+                    <div style={{
+                        border: '1px solid #D9D9D9',
+                        filter: 'drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.25))',
+                        borderRadius: '10px',
+                        padding: '10px',
+
+                    }}>
+
+                        <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                            <WarningAmberOutlinedIcon style={{ color: "#BA8900" }} />
+                            <div>
+                                <h4>Note:</h4>
+                                <p style={{ marginTop: "5px" }}>This will affect your all accounts. <strong>Learn more</strong></p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div style={{ textAlign: "center", marginTop: "20px" }}>
+                        <Image
+                            loading="lazy"
+                            src={assest.confirmMail}
+                            alt={"rewards_"}
+
+                            height={50}
+                            width={50}
+                            style={{
+                                width: "50%",
+                                height: "50%"
+                                // color: "green",
+                                // objectFit: "contain",
+                                // display: list.status === 'pending' ? "none" : "block"
+                                // visibility: list.status === 'pending' ? "hidden" : "visible"
+                            }}
+                        />
+                        <p style={{ marginTop: "22.9px" }}>We will send you an email to the new address to verify the account.</p>
+
+
+                        <div className={styles.page_proile_details}>
+                            <div className={styles.mainProfile}>
+                                <div className={styles.profileForm} style={{ padding: "18px 20px" }}>
+                                    <Box sx={{ flexGrow: 1 }}>
+                                        <Grid container spacing={2}>
+
+                                            <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "13px" }}>
+                                                <div className={styles.formGroup}>
+                                                    {/* <div style={{ border: "1px solid rgba(24, 119, 242, 0.2)", borderRadius: "10px", padding: "10px" }} > */}
+
+                                                    {/* <InputLabel htmlFor="input-with-icon-adornment">
+                                                Phone
+                                            </InputLabel> */}
+                                                    <Input
+                                                        // disabled={true}
+                                                        name="email"
+                                                        // type="number"
+
+                                                        value={email}
+                                                        onChange={handleChange}
+                                                        placeholder="Email Address"
+                                                        startAdornment={
+                                                            <InputAdornment position="start">
+                                                                <IconModifier
+                                                                    variableName={"inputStartAdornmentColor"}
+                                                                    propertiesToChange={{
+                                                                        path: ["stroke"],
+                                                                        rect: ["stroke"],
+                                                                    }}
+                                                                    style={{
+                                                                        color: "#5F5F5F",
+                                                                        marginRight: "-7px",
+                                                                        height: "21px",
+                                                                        width: "21px",
+                                                                    }}
+                                                                >
+                                                                    <MailIcon
+                                                                        style={{
+                                                                            color: "#5F5F5F",
+                                                                            marginRight: "-7px",
+                                                                            height: "21px",
+                                                                            width: "21px",
+                                                                        }}
+                                                                    />
+                                                                </IconModifier>
+                                                            </InputAdornment>
+                                                        }
+                                                    // {...register("phone_no", {
+                                                    //   onChange: (e) => {
+                                                    //     setPhone(e.target.value);
+                                                    //   },
+                                                    // })}
+                                                    />
+
+
+                                                </div>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* </div> */}
+
+
+                    </div>
+                    {/* <Alert severity="warning">
                         This will affect 7 stores and your Partner account. if you'd like to change your email address for a single store, lern
                         how to <a style={{ color: "unset", textDecoration: "underline" }} href='#'>transfer ownership</a>.
-                    </Alert>
+                    </Alert> */}
 
                 </DialogContent>
-                <DialogContent dividers>
-                    <Typography gutterBottom>
+
+
+                {/* <Typography gutterBottom>
                         We'll send you an email to the new address to verify that you own it
                     </Typography>
                     <InputLabel htmlFor="bootstrap-input"
@@ -139,23 +263,27 @@ const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, o
                     </InputLabel>
                     <FormControl variant="standard" style={{ width: "100%", marginTop: "10px" }}>
                         <BootstrapInput value={email} id="email" onChange={handleChange} />
-                    </FormControl>
+                    </FormControl> */}
 
-                </DialogContent>
-                <DialogActions>
-                    <Button style={{
+
+                <DialogActions style={{ justifyContent: "center" }}>
+                    {/* <Button style={{
                         borderColor: 'lightgray',
                         color: 'black',
                     }} variant="outlined" color="secondary" onClick={handleClose}>
                         Cancel
-                    </Button>
-                    <Button variant="contained" color="success"
+                    </Button> */}
+                    <Button variant="contained" color="info"
+                        style={{
+                            width: "152px", height: "41px", background: '#1877F2',
+                            borderRadius: '10px', boxShadow: "none", marginBottom: "24px"
+                        }}
                         disabled={!validateEmail(email)}
                         onClick={onClickChangeEmail}>
-                        Change email
+                        Send
                     </Button>
                 </DialogActions>
-            </BootstrapDialog>
+            </BootstrapDialog >
         </>
     );
 

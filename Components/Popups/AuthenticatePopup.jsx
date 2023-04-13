@@ -15,6 +15,7 @@ import LinearProgress, {
 import { styled } from "@mui/material/styles";
 import { memo } from "react";
 import Image from "next/image";
+import LoopIcon from '@mui/icons-material/Loop';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -24,6 +25,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
     borderRadius: 21,
 
+
     [`&.${linearProgressClasses.colorPrimary}`]: {
         backgroundColor: 'unset'
         // theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
@@ -32,8 +34,13 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
         // borderRadius: 5,
         // backgroundColor: "black"
         background: 'linear-gradient(90deg, #C350CB 8.33%, #290BF7 83.37%)',
-        mixBlendMode: 'normal',
-        borderRadius: '21px'
+        // background: 'linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB)',
+        animation: 'gradient 15s ease infinite',
+        '-webkit-animation': 'Gradient 15s ease infinite',
+        '-moz-animation': 'Gradient 15s ease infinite',
+        // mixBlendMode: 'normal',
+        borderRadius: '21px',
+        // boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)'
     }
 }));
 
@@ -82,9 +89,10 @@ const AuthenticatePopup = ({ memoList, updateStatus, ratio, rewardList, onClickR
                     </div>
                     <div
                         style={{
-                            border: '1px solid lightgray',
+                            // border: '1px solid lightgray',
                             padding: '6px',
                             borderRadius: '21px',
+                            boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)'
                         }}
 
                     >
@@ -121,12 +129,14 @@ const AuthenticatePopup = ({ memoList, updateStatus, ratio, rewardList, onClickR
                             <>
                                 {
                                     Number(verifyTime) < Number(enrollMaxLimit) ?
-                                        <div className="primaryBtn home_primarybtn" style={{ marginTop: "15px" }} >
+                                        <div className="primaryBtn " style={{ marginTop: "15px", }} >
                                             <MyButton
 
                                                 onClick={() => onClickRetry()}
+                                                style={{ width: "250px", boxShadow: "none" }}
                                             >
-                                                <strong>RETRY</strong>
+                                                <LoopIcon />&nbsp;
+                                                <strong>RETRY ({enrollMaxLimit - verifyTime})</strong>
                                             </MyButton>
                                         </div>
                                         :

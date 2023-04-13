@@ -40,5 +40,7 @@ export default {
   noData: "/assets/images/Object.svg",
   iPhoneIcon: "/assets/images/iphone-icon.png",
   qrCode: "/assets/images/qr-scan.webp",
-  checkGif: "/assets/images/check-gif.gif",
+  checkGif: "/assets/images/check-gif_3.gif",
+  crossGif: "/assets/images/cross_gif.gif",
+
 };

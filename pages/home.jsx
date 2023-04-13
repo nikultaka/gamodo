@@ -44,6 +44,18 @@ import {
 } from "@/components/Skeleton/Skeleton";
 import { Fade, Grid } from "@mui/material";
 import useNotiStack from "@/hooks/useNotistack";
+import WarningIcon from '@mui/icons-material/Warning';
+import ErrorIcon from '@mui/icons-material/Error';
+import {
+  // Avatar,
+  // Box,
+  Button,
+  // InputAdornment,
+  // InputBase,
+  // Slide,
+  // styled,
+  // TextField,
+} from "@mui/material";
 
 //* *  DYNAMIC IMPORTS   */
 import MyButton from "@/ui/Buttons/MyButton/MyButton";
@@ -265,7 +277,7 @@ export default function Home() {
     }
   );
 
-  console.log('categoryWiseContent', categoryWiseContent)
+  // console.log('categoryWiseContent', categoryWiseContent)
 
   var settings = {
     dots: false,
@@ -709,6 +721,21 @@ export default function Home() {
 
   }
 
+  let hideEmail = function (email) {
+    return email?.replace(/(.{2})(.*)(?=@)/,
+      function (gp1, gp2, gp3) {
+        for (let i = 0; i < gp3.length; i++) {
+          gp2 += "*";
+        } return gp2;
+      });
+  }
+
+  useEffect(() => {
+    if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
+      setOpen(true)
+    }
+  }, [memberData])
+
 
 
   return (
@@ -724,17 +751,17 @@ export default function Home() {
         onClickChange={onClickChange}
       /> */}
 
-      {/* <ChangeEmailPopup
+      <ChangeEmailPopup
         open={openChangeEmailPopup}
         setOpen={setOpenChangeEmailPopup}
         email={email}
         handleChange={handleChange}
         validateEmail={validateEmail}
         onClickChangeEmail={onClickChangeEmail}
-      /> */}
+      />
 
       <div className="pagebody">
-      {
+        {
           categoryWiseContent && categoryWiseContent.length &&
           categoryWiseContent.map((val, i) => {
             return (
@@ -1086,7 +1113,7 @@ export default function Home() {
 
 
 
-      
+
 
         {/* <Fade
           in={ebookCards && ebookCards?.length > 0}
@@ -1354,6 +1381,55 @@ export default function Home() {
           </div>
         </Fade>
       </div>
+      {
+        open &&
+        <div className="sticky"
+          style={{
+            // background: '#C92CA2',
+            // color: '#fff',
+            position: 'sticky',
+            bottom: '90px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 99999999999
+            // padding: '1em 0',
+          }}>
+          <div
+
+            style={{
+              background: "#ffff", padding: "2%",
+              //  border: "2px solid"
+              background: '#FFDBDB',
+              boxShadow: ' 0px 0px 8px rgba(0, 0, 0, 0.25)',
+              borderRadius: '10px',
+              width: '335px',
+              height: '83px',
+
+            }}>
+
+            <div style={{ marginTop: "10px" }}>
+              <div style={{ display: "flex", gap: "5px" }}>
+                <ErrorIcon style={{ color: "red", border: '2px solid white', borderRadius: '16px' }} />&nbsp;
+                <span style={{ fontSize: "12px", fontWeight: 400 }}>{"Please check your email to verify your account."}
+                  <h4 style={{ fontSize: "12px", fontWeight: 500, color: ' #1877F2' }}>{hideEmail(memberData?.email)}</h4>
+                </span>
+              </div>
+            </div>
+            {/* <div style={{ textAlign: "center", padding: "unset" }}>
+            <h4 style={{fontSize:"12px",fontWeight:400}}>{memberData?.email}</h4>
+          </div> */}
+            <div style={{ justifyContent: "space-between", display: "flex" }}>
+              <Button onClick={onClickChange} style={{ color: "black", fontSize: "12px", fontWeight: 400 }}>Change Email</Button>
+              <Button onClick={onClickResend} style={{ fontSize: "12px", fontWeight: 600, textTransform: "unset" }}>
+                Click here to resend
+              </Button>
+            </div>
+          </div>
+
+
+        </div>
+      }
     </Wrapper>
   );
 }

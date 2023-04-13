@@ -172,11 +172,11 @@ const Header = ({ title, subtext, hideProfile }) => {
     setOpenSearchBox(false);
   }, [openSearchBox]);
 
-  useEffect(() => {
-    if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
-      setOpen(true)
-    }
-  }, [memberData])
+  // useEffect(() => {
+  //   if (memberData && !memberData.password_exist && localStorage.getItem('accountVerification')) {
+  //     setOpen(true)
+  //   }
+  // }, [memberData])
 
   const validateEmail = (email) => {
     return String(email)
@@ -229,15 +229,55 @@ const Header = ({ title, subtext, hideProfile }) => {
 
 
         <Box className={styles.headerWrapper} ref={headerRef}>
-          <ChangeEmailPopup
+          {/* <ChangeEmailPopup
             open={openChangeEmailPopup}
             setOpen={setOpenChangeEmailPopup}
             email={email}
             handleChange={handleChange}
             validateEmail={validateEmail}
             onClickChangeEmail={onClickChangeEmail}
-          />
-          {
+          /> */}
+          <div className={styles.homeHeader}>
+            <div className={styles.homeHeaderLeft}>
+              <h1>{title || "Home"}</h1>
+              <p className={styles.hearderSubHeading}>
+                {profileData?.first_name !== undefined &&
+                  `Welcome Back ${profileData?.first_name !== undefined
+                    ? profileData?.first_name
+                    : ""
+                  }`}
+              </p>
+            </div>
+            <div className={styles.homeHeaderRight}>
+              <StyledSearchContainer
+                className={!openSearchBox ? "hideSearchInput" : "showSearchInput"}
+              >
+                <InputBase
+                  style={{ paddingLeft: "10px" }}
+                  placeholder="Search..."
+                  inputRef={searchInputRef}
+                  value={searchValue}
+                  onChange={({ target: { value } }) => setSearchValue(value)}
+                />
+                <MyButton onClick={searchBoxOpen}>
+                  <SearchIcon style={{ paddingLeft: "0px" }} />
+                </MyButton>
+
+                <Button className="closeSearch" onClick={closeSearchBox}>
+                  <CancelIcon />
+                </Button>
+              </StyledSearchContainer>
+              {!hideProfile && (
+                <Avatar
+                  onClick={handleOpenDrawerMenu}
+                  alt="Remy Sharp"
+                  src={assest?.pf01}
+                  sx={{ width: 50, height: 50 }}
+                />
+              )}
+            </div>
+          </div>
+          {/* {
             open
               ?
               <div style={{ background: "#ffff", padding: "2%", border: "2px solid" }}>
@@ -297,7 +337,7 @@ const Header = ({ title, subtext, hideProfile }) => {
                 </div>
               </div>
 
-          }
+          } */}
 
 
 

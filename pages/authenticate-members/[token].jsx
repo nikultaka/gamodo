@@ -286,7 +286,7 @@ export default function index() {
 
               localStorage.setItem("verificationCount", 0)
               localStorage.setItem("accountVerification", true)
-              // router.push("/home")
+              router.push("/home")
 
             } else {
               // console.log(verifyData.status)
@@ -425,19 +425,34 @@ export default function index() {
   }, [rewardList2]);
 
 
-  const memoList = useMemo(() => rewardList2.map((list,i) => {
-    
+  const memoList = useMemo(() => rewardList2.map((list, i) => {
+
     return (
       <li class="verifying-list__item" >
         <div class="icon-circle">
           {
             list.status === 'rejected' ?
               <>
-                <CancelIcon
+                {/* <CancelIcon
                   style={{
                     width: 20,
                     height: 20,
                     color: "red",
+                    visibility: list.status === 'pending' ? "hidden" : "visible"
+                  }}
+                /> */}
+                <Image
+                  loading="lazy"
+                  src={assest.crossGif + '?key=' + i}
+                  alt={"rewards_" + i}
+                  id={i}
+                  key={i}
+                  height={20}
+                  width={20}
+                  style={{
+                    // color: "green",
+                    // objectFit: "contain",
+                    // display: list.status === 'pending' ? "none" : "block"
                     visibility: list.status === 'pending' ? "hidden" : "visible"
                   }}
                 />
@@ -479,17 +494,19 @@ export default function index() {
                 //     visibility: list.status === 'pending' ? "hidden" : "visible"
                 //   }}
                 // />
-                
+
                 <Image
                   loading="lazy"
-                  src={assest.checkGif}
-                  alt={"rewards_"+i}
+                  src={assest.checkGif + '?key=' + i}
+                  alt={"rewards_" + i}
                   id={i}
+                  key={i}
                   height={20}
                   width={20}
                   style={{
-                    color: "green",
-                    objectFit: "contain",
+                    // color: "green",
+                    // objectFit: "contain",
+                    // display: list.status === 'pending' ? "none" : "block"
                     visibility: list.status === 'pending' ? "hidden" : "visible"
                   }}
                 />

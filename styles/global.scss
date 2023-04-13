@@ -882,6 +882,22 @@ mark {
   line-height: 24px;
 
 }
-.home_primarybtn button{
+
+.home_primarybtn button {
   width: 150px !important;
+}
+
+.css-uy11aq .SnackbarItem-variantSuccess {
+  background-color: #CAFFCF !important;
+  color: #1E1E1E !important;
+}
+
+.css-uy11aq .SnackbarItem-variantSuccess>div>svg>path {
+  color: white !important;
+}
+
+.changeEmailPoupup>button {
+  background: #E7E7E7 !important;
+  width: 30px !important;
+  height: 30px !important;
 }
