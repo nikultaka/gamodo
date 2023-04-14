@@ -178,11 +178,11 @@ const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, o
 
                         <div className={styles.page_proile_details}>
                             <div className={styles.mainProfile}>
-                                <div className={styles.profileForm} style={{ padding: "18px 20px" }}>
+                                <div className={styles.profileForm} style={{ padding: "18px 20px",paddingBottom:"13px" }}>
                                     <Box sx={{ flexGrow: 1 }}>
-                                        <Grid container spacing={2}>
+                                        <Grid container spacing={2} style={{ width: 'calc(100% + 32px)' }}>
 
-                                            <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "13px" }}>
+                                            <Grid item sm={12} xs={12} style={{ paddingTop: "unset", marginTop: "13px", paddingLeft: "unset" }}>
                                                 <div className={styles.formGroup}>
                                                     {/* <div style={{ border: "1px solid rgba(24, 119, 242, 0.2)", borderRadius: "10px", padding: "10px" }} > */}
 
@@ -200,7 +200,7 @@ const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, o
                                                         startAdornment={
                                                             <InputAdornment position="start">
                                                                 <IconModifier
-                                                                    variableName={"inputStartAdornmentColor"}
+                                                                    variableName={"inputStartAdornmentColorgray"}
                                                                     propertiesToChange={{
                                                                         path: ["stroke"],
                                                                         rect: ["stroke"],
@@ -223,6 +223,7 @@ const ChangeEmailPopup = ({ open, setOpen, email, handleChange, validateEmail, o
                                                                 </IconModifier>
                                                             </InputAdornment>
                                                         }
+                                                        style={{ border: '1px solid #D9D9D9' }}
                                                     // {...register("phone_no", {
                                                     //   onChange: (e) => {
                                                     //     setPhone(e.target.value);

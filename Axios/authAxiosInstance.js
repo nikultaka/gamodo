@@ -39,10 +39,10 @@ export const getAxiosContext = () => {
 
 export const setAxiosContext = (_context) => {
   context = _context;
-  if (typeof window === "undefined") {
-    const hostname = getHostName(context.req?.headers?.host);
-    setAxiosBaseUrl(hostname, "server");
-  }
+  // if (typeof window === "undefined") {
+  //   const hostname = getHostName(context.req?.headers?.host);
+  //   setAxiosBaseUrl(hostname, "server");
+  // }
 };
 
 if (typeof window !== "undefined") {

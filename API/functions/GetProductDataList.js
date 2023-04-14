@@ -306,4 +306,33 @@ export const contentDetails = async (data, token) => {
   return _res;
 };
 
+
+export const GetContentList = async (data, token) => {
+  const _res = authAxiosInstance
+    .post(
+      api_end_points.getContentList,
+      {
+        source: data?.source,
+        category_id: data.category_id,
+        page: data.page
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${data?.token}`,
+        },
+      }
+    )
+    .then((response) => {
+      if (response.status.error_code === 1) {
+        return [];
+      }
+      return response?.result?.data;
+    })
+    .catch(() => {
+      return [];
+    });
+
+  return _res;
+};
+
 export default GetProductDataList;

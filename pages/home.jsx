@@ -773,7 +773,7 @@ export default function Home() {
                 <div className="couponSlider" key={i}>
                   <div className="secHeading">
                     <h3>{val?.groupName}</h3>
-                    <Link href="/allBlogs">View more</Link>
+                    <Link href="/all-category-content">View more</Link>
                   </div>
                   <div className="itemsCarousel">
                     {!categoryWiseContentLoading ? (
